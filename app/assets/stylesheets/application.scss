@@ -14,6 +14,12 @@
  *= require_self
  *= require materialize
  */
+@import 'materialize';
+
+$bgcolor1: #283593;
+$bgcolor2: #9fa8da;
+$textcolor1: white;
+$textcolor2: #f5f5f5;
 
 .icon-block {
   padding: 0 15px;
@@ -21,3 +27,37 @@
 .icon-block .material-icons {
 	font-size: inherit;
 }
+
+.bg-1
+{
+  background-color: $bgcolor1;
+}
+
+.bg-2
+{
+  background-color: $bgcolor2;
+}
+
+.text-1
+{
+  color: $textcolor1;
+}
+
+.text-2
+{
+  color: $textcolor2;
+}
+
+.text-3
+{
+  color: $bgcolor1;
+}
+
+.btn-large {
+  @extend .bg-1;
+}
+
+.btn {
+  @extend .bg-1;
+}
+
