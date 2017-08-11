@@ -34,6 +34,7 @@ gem 'simple_form'
 gem 'will_paginate'
 gem 'ffaker'
 gem 'draper'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 
 
 # Use Capistrano for deployment
