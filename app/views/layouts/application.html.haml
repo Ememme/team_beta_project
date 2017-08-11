@@ -15,7 +15,9 @@
         %a#logo-container.brand-logo{:href => "#"} Dormitory Manager
         %ul.right.hide-on-maed-and-down
           %li
-            = link_to "Sign in", root_path, style: "font-weight: bold"
+            = link_to "Log in", new_student_session_path, style: "font-weight: bold"
+          %li
+            = link_to "Sign up", new_student_registration_path, style: "font-weight: bold"
           %li
             = link_to "About", root_path
           %li
