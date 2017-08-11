@@ -32,7 +32,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'haml-rails'
 gem 'simple_form'
 gem 'will_paginate'
-gem 'faker'
+gem 'ffaker'
 gem 'draper'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 
