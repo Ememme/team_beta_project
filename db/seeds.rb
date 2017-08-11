@@ -5,3 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'ffaker'
+
+if Student.count < 100
+  50.times do
+    Student.create(
+      first_name: FFaker::Name.first_name,
+      last_name: FFaker::Name.last_name,
+      email: FFaker::Internet.email,
+      id_number: FFaker::Identification.drivers_license,
+      encrypted_password: FFaker::Internet.password
+    )
+  end
+end
