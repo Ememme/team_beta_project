@@ -34,6 +34,7 @@ gem 'simple_form'
 gem 'will_paginate'
 gem 'faker'
 gem 'draper'
+gem 'figaro'
 
 
 # Use Capistrano for deployment
