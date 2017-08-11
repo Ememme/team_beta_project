@@ -267,8 +267,8 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   draper
-  figaro
   ffaker
+  figaro
   haml-rails
   jbuilder (~> 2.5)
   jquery-rails (~> 4.3, >= 4.3.1)
