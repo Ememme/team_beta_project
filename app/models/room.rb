@@ -1,3 +1,6 @@
 class Room < ApplicationRecord
-  belongs_to :StudentHouse
+  has_many :tenancy_agreements
+  has_many :students, through: :tenancy_agreements
+
+  validates :capacity, :number, presence: true
 end

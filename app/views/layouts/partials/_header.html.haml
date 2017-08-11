@@ -20,6 +20,11 @@
             = link_to "About", root_path
           %li
             = link_to "Something", root_path
+          %li
+            - if params[:locale] == "en"
+              = link_to 'Change to PL', url_for(locale: :pl)
+            - elsif params[:locale] == "pl"
+              = link_to 'Change to EN', url_for(locale: :en)
         %ul#nav-mobile.side-nav
           %li
             %a{:href => "#"} Navbar Link
