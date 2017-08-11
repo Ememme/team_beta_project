@@ -1,0 +1,2 @@
+class StudentHouse < ApplicationRecord
+end

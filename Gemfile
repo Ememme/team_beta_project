@@ -35,6 +35,8 @@ gem 'will_paginate'
 gem 'ffaker'
 gem 'draper'
 
+gem 'devise'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
