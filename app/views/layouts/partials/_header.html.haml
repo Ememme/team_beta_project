@@ -14,12 +14,12 @@
       .nav-wrapper.container
         %a#logo-container.brand-logo{:href => "#"} Dormitory Manager
         %ul.right.hide-on-med-and-down
+          %li 
+            = link_to "Log in", new_student_session_path, style: "font-weight: bold"
           %li
-            = link_to "Sign in", root_path, style: "font-weight: bold"
+            = link_to "Sign up", new_student_registration_path, style: "font-weight: bold"
           %li
             = link_to "About", root_path
-          %li
-            = link_to "Something", root_path
           %li
             - if params[:locale] == "en"
               = link_to 'Change to PL', url_for(locale: :pl)
