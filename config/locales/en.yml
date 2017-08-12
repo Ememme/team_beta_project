@@ -1,2 +1,10 @@
 en:
   hello: "Hello world"
+
+  profile:
+    new: "Create an account"
+    edit: "Edit your profile"
+    cancel: "Delete your account"
+    login: "Log in"
+    logout: "Log out"
+    signup: "Sign up"
