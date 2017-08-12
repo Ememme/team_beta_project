@@ -14,10 +14,14 @@
       .nav-wrapper.container
         %a#logo-container.brand-logo{:href => "#"} Dormitory Manager
         %ul.right.hide-on-med-and-down
-          %li 
-            = link_to "Log in", new_student_session_path, style: "font-weight: bold"
-          %li
-            = link_to "Sign up", new_student_registration_path, style: "font-weight: bold"
+          -if student_signed_in?
+            %li
+              = link_to "Witaj #{current_student.first_name}!", root_path
+          -else
+            %li
+              = link_to "Sign up", new_student_registration_path, style: "font-weight: bold"
+            %li 
+              = link_to "Log in", new_student_session_path, style: "font-weight: bold"
           %li
             = link_to "About", root_path
           %li
