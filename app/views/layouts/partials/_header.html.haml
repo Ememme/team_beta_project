@@ -12,19 +12,25 @@
   %body.bg-2
     %nav.bg-1{:role => "navigation"}
       .nav-wrapper.container
-        %a#logo-container.brand-logo{:href => "#"} Dormitory Manager
+        %a#logo-container.brand-logo{:href => root_path} Student Inn
+
         %ul.right.hide-on-med-and-down
-          %li 
-            = link_to "Log in", new_student_session_path, style: "font-weight: bold"
-          %li
-            = link_to "Sign up", new_student_registration_path, style: "font-weight: bold"
-          %li
-            = link_to "About", root_path
+          - if !student_signed_in?
+
+            %li
+              = link_to t('profile.login'), new_student_session_path, style: "font-weight: bold"
+            %li
+              = link_to t('profile.signup'), new_student_registration_path, style: "font-weight: bold"
+          - else
+            %li
+              = link_to t('profile.logout'), destroy_student_session_path, :method => :delete
+
           %li
             - if params[:locale] == "en"
-              = link_to 'Change to PL', url_for(locale: :pl)
+              = link_to 'PL', url_for(locale: :pl)
             - else
-              = link_to 'Change to EN', url_for(locale: :en)
+              = link_to 'EN', url_for(locale: :en)
+
         %ul#nav-mobile.side-nav
           %li
             %a{:href => "#"} Navbar Link
