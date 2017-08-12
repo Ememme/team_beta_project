@@ -3,8 +3,11 @@ Rails.application.routes.draw do
 	scope "(:locale)", locale: /en|pl/ do
 
 		devise_for :students
-		root 'pages#home'
+		root to: 'pages#home'
 
 	end
+
+  resources :students, only: [:show, :index ] do
+  end
 
 end
