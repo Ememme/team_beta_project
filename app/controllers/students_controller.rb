@@ -1,6 +1,5 @@
 class StudentsController < ApplicationController
-  def new
-  end
+  before_action :set_student, only: [:show]
 
   def index
   end
@@ -8,6 +7,9 @@ class StudentsController < ApplicationController
   def show
   end
 
-  def edit
+  private
+
+  def set_student
+    @student = Student.find(params[:id])
   end
 end
