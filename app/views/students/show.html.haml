@@ -1,2 +1,10 @@
-%h1 Students#show
-%p Find me in app/views/students/show.html.haml
+%h5
+  = @student.first_name
+  = @student.last_name
+
+- if @student == current_student
+  = link_to t('profile.edit'), edit_student_registration_path, method: :get
+
+- if @student == current_student && @student.bio.present?
+  = @student.bio
+
