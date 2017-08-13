@@ -1,21 +1,13 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 require 'ffaker'
   Student.create!(
       nickname: "admin",
       password: "password",
       email:    "admin@example.com",
       first_name: "Admin",
-      last_name:  "User",
+      last_name:  "Useruser",
       id_number:  "1293123"
   )
 
-if Student.count < 100
   50.times do |s|
     nickname = "user#{s+1}"
     email = "#{nickname}@mail.com"
@@ -31,4 +23,19 @@ if Student.count < 100
       bio:        FFaker::Lorem.paragraph
     )
   end
-end
+
+  all_students = Student.all
+  capacity = [1,2,3,4].sample
+  number = 0
+  while all_students.count > 0
+    room = Room.create!(
+      name: "Room's name",
+      number: number += 1,
+      capacity: capacity
+    )
+
+    roommates = all_students.sample(capacity)
+    room.students << roommates
+
+    all_students -= roommates
+  end
