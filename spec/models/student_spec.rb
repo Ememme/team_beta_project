@@ -21,8 +21,8 @@ RSpec.describe Student, type: :model do
       it { should_not allow_value(b).for(:first_name)}
       it { should_not allow_value(b).for(:last_name)}
     end
-    it { should validate_length_of(:first_name).is_at_least(2).is_at_most(20)}
-    it { should validate_length_of(:last_name).is_at_least(2).is_at_most(20)}
+    it { should validate_length_of(:first_name).is_at_most(30)}
+    it { should validate_length_of(:last_name).is_at_most(30)}
     it { should validate_presence_of(:id_number) }
     it { should validate_uniqueness_of(:id_number) }
     it { should_not allow_value("aSd!@#").for(:id_number) }

@@ -13,7 +13,7 @@ class Student < ApplicationRecord
                        format: { with: /\A[a-zA-Z0-9]+\z/ }
   validates :email, uniqueness: true, presence: true
   validates :first_name, :last_name, format: { with: /\A[a-zA-Z]+\z/ },
-                                     length: { minimum: 2, maximum: 20 }
+                                     length: { maximum: 30 }
   validates :id_number, presence: true,
                         uniqueness: true,
                         format: { with: /\A[A-Z0-9]+\z/ }
