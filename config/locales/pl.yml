@@ -1,2 +1,10 @@
 pl:
   hello: "Witaj Świecie"
+
+  profile:
+    new: "Utwórz konto"
+    edit: "Edytuj swój profil"
+    cancel: "Usuń konto"
+    login: "Zaloguj się"
+    logout: "Wyloguj się"
+    signup: "Zarejestruj się"
