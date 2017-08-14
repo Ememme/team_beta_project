@@ -1,5 +1,5 @@
 .center
-  %h2 Resend confirmation instructions
+  %h2 = t('devise.confirmations.send_instructions')
 .row
   .col.s5
   .col.s2.center    
@@ -9,6 +9,6 @@
       .form-inputs
         = f.input :email, required: true, autofocus: true
       .form-actions
-        = f.button :submit, "Resend confirmation instructions"
+        = f.button :submit, = t('devise.confirmations.send_instructions_button')
     = render "devise/shared/links"
     TML

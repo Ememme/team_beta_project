@@ -1,4 +1,5 @@
-%h2.center Log in
+%h2.center
+  = t('profile.login')
 .row
   .col.s5
   .col.s2.center  
@@ -9,5 +10,5 @@
         // Nie umiem zrobić checkboxa
         // = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
       .form-actions
-        = f.button :submit, "Log in"
+        = f.button :submit, t('profile.login')
     = render "devise/shared/links"
