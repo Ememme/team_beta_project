@@ -53,11 +53,22 @@ $textcolor2: #f5f5f5;
   color: $bgcolor1;
 }
 
+.btn {
+  @extend .bg-1;
+  height: 36px;
+  padding: 10px;
+}
+
 .btn-large {
   @extend .bg-1;
 }
 
-.btn {
-  @extend .bg-1;
-}
+#dropdown1
+  {
+    width: 150px;
+    height: 260px;
+  }
 
+#dbutton1 {
+  width: 150px;
+}
