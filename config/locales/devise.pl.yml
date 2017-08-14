@@ -5,6 +5,7 @@ pl:
     confirmations:
       confirmed: "Twoje konto zostało aktywowane. Zostałeś pomyślnie zalogowany."
       send_instructions: "Za chwilę otrzymasz email z instrukcją jak aktywować konto."
+      send_instructions_button: "Wyślij email aktywacyjny"
       send_paranoid_instructions: "Jeśli Twój adres email istnieje w naszej bazie, za chwilę powinieneś otrzymać instrukcję jak aktywować konto."
     failure:
       already_authenticated: "Jesteś aktualnie zalogowany."
@@ -19,10 +20,14 @@ pl:
     mailer:
       confirmation_instructions:
         subject: "Instrukcja aktywacji konta"
+        not_received: "Nie otrzymałeś e-maila aktywacyjnego?"
+        link_instruction: "Możesz potwierdzić swój e-mail przez poniższy link:"
+        confirm_my_account: "Potwierdź mój e-mail"
       reset_password_instructions:
         subject: "Instrukcja zresetowania hasła."
       unlock_instructions:
         subject: "Instrukcja odblokowania konta"
+        not_received: "Nie otrzymałeś instrukcji dotyczących odblokowania konta?"
     omniauth_callbacks:
       failure: "Logowanie przez konto %{kind} zakończyło się błędem: \"%{reason}\"."
       success: "Zalogowałeś się pomyślnie przez konto %{kind}."
@@ -32,6 +37,9 @@ pl:
       send_paranoid_instructions: "Jeżeli Twój adres istnieje w naszej bazie, otrzymasz za chwilę emaila z instrukcją zmiany hasła."
       updated: "Twoje hasło zostało zmienione. Zostałeś pomyślnie zalogowany."
       updated_not_active: "Twoje hasło zostało zmienione."
+      forgot_password: "Zapomniałeś hasła?"
+      forgot_password_button: "Wyślij instrukcje"
+      forgot_password_sedative: "Nie martw się! Wyślemy Ci e-mail, to sobie nowe zrobisz."
     registrations:
       destroyed: "Do widzenia! Twoje konto zostało usunięte."
       signed_up: "Witaj! Zarejestrowałeś się pomyślnie."
@@ -41,9 +49,9 @@ pl:
       update_needs_confirmation: "Konto zostało zaktualizowane. Niemniej jednak przed wprowadzeniem zmian musimy potwierdzić Twój nowy adres email. Za chwilę wyślemy instrukcję na nowy adres."
       updated: "Konto zostało pomyślnie zaktualizowane."
     sessions:
-      user:
-        signed_in: "Zostałeś zalogowany."
-        signed_out: "Zostałeś wylogowany."
+      sign_in_with: "Sign in with"
+      signed_in: "Zostałeś zalogowany."
+      signed_out: "Zostałeś wylogowany."
     unlocks:
       send_instructions: "Za chwilę otrzymasz wiadomość email z instrukcją jak odblokować konto."
       send_paranoid_instructions: "Jeżeli Twoje konto istnieje, otrzymasz wiadomość emial z instrukcją jak odblokować konto."

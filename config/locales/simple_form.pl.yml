@@ -1,31 +1,37 @@
-en:
+pl:
   simple_form:
     "yes": 'Tak'
     "no": 'Nie'
     required:
-      text: 'required'
+      text: 'wymagane'
       mark: '*'
       # You can uncomment the line below if you need to overwrite the whole required html.
       # When using html, text and mark won't be used.
       # html: '<abbr title="required">*</abbr>'
     error_notification:
       default_message: "Proszę sprawdź poniższe problemy:"
-    # Examples
-    # labels:
-    #   defaults:
-    #     password: 'Password'
-    #   user:
-    #     new:
-    #       email: 'E-mail to sign in.'
-    #     edit:
-    #       email: 'E-mail.'
-    # hints:
-    #   defaults:
-    #     username: 'User name to sign in.'
-    #     password: 'No special characters, please.'
-    # include_blanks:
-    #   defaults:
-    #     age: 'Rather not say'
-    # prompts:
-    #   defaults:
-    #     age: 'Select your age'
+    labels:
+      defaults:
+        password: 'Hasło'
+        email: "E-mail"
+        password_confirmation: "Potwierdzenie hasła"
+        first_name: "Imię"
+        last_name: "Naziwsko"
+        nickname: "Ksywa na dzielni"
+        sign_up: "Załóż konto"
+        sign_in: "Zaloguj"
+      user:
+        new:
+          email: 'E-mail potrzebny do logowania.'
+        edit:
+          email: 'E-mail'
+      hints:
+        defaults:
+          username: 'Nazwa użytkownika potrzebna do logowania'
+          password: 'Nie możesz użyć znaków specjalnych'
+      include_blanks:
+        defaults:
+          age: ''
+      prompts:
+        defaults:
+          age: 'Wybierz swój wiek'

@@ -3,8 +3,10 @@
 %footer.page-footer.bg-1
   .container
     .row
-      %h5.text-2 Company Bio
-      %p.text-1 We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.
-
+      %h5.text-2=t('layout.company_bio')
+      %p.text-1=t('layout.company_bio_description')
+  .footer-copyright
+    .container
+      =t('layout.made_by')
 / Scripts
 %script{:src => "https://code.jquery.com/jquery-2.1.1.min.js"}

@@ -3,7 +3,7 @@
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %meta{:content => "width=device-width, initial-scale=1, maximum-scale=1.0", :name => "viewport"}/
-    %title Dormitory Manager - bla bla bla!
+    %title=t('layout.logo')
     / CSS
     = csrf_meta_tags
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
@@ -12,7 +12,7 @@
   %body.bg-2
     %nav.bg-1{:role => "navigation"}
       .nav-wrapper.container
-        %a#logo-container.brand-logo{:href => root_path} Student Inn
+        %a#logo-container.brand-logo{:href => root_path}=t('layout.logo')
 
         %ul.right.hide-on-med-and-down
           - if !student_signed_in?

@@ -19,3 +19,10 @@ en:
     myprofile: "My profile"
 
     id_number: "ID number"
+  layout:
+    logo: "Student Inn"
+    description: "A modern tool for managing your dormitory issues!"
+    get_started: "Get started"
+    company_bio: "Company Bio"
+    company_bio_description: "We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated."
+    made_by: "Made by team beta"

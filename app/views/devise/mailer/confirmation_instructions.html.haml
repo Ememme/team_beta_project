@@ -3,5 +3,5 @@
 .row
   .col.s5
   .col.s2.center  
-    %p You can confirm your account email through the link below:
-    %p= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token)
+    %p=t('devise.mailer.link_instruction')
+    %p= link_to t('devise.mailer.confirm_my_account'), confirmation_url(@resource, confirmation_token: @token)

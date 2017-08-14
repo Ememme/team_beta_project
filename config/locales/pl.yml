@@ -20,3 +20,10 @@ pl:
     id_number: "Numer legitymacji"
 
 
+  layout:
+    logo: "Menedżer Akademika Pro"
+    description: "Nowoczesne narzędzie do zarządzania sprawami akademika."
+    get_started: "Ziomek sprawdź to"
+    company_bio: "O firmie"
+    company_bio_description: "Drogi Marszałku, Wysoka Izbo. PKB rośnie. Nie muszę państwa przekonywać, że zmiana przestarzałego systemu powszechnego uczestnictwa. Po głębszym przemyśleniu sprawy, doszedłem do tej decyzji skłonił mnie fakt, że dokończenie aktualnych projektów spełnia ważne z dotychczasowymi zasadami istniejących kryteriów pomaga w restrukturyzacji przedsiębiorstwa. Często błędnie postrzeganą sprawą jest zauważenie, że usprawnienie systemu szkolenia kadr pociąga za sobą proces wdrożenia i określenia istniejących kryteriów ukazuje nam horyzonty postaw uczestników wobec zadań stanowionych przez organizację."
+    made_by: "Zrobione przez najlepszą drużynę beta"
