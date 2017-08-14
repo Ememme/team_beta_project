@@ -8,5 +8,10 @@ Rails.application.routes.draw do
 		
 		resources :rooms
 
+
+    resources :students, only: [:show, :index ] do
+    end
+
 	end
+
 end
