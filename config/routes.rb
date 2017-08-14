@@ -5,9 +5,9 @@ Rails.application.routes.draw do
 		devise_for :students
 		root to: 'pages#home'
 
-	end
+    resources :students, only: [:show, :index ] do
+    end
 
-  resources :students, only: [:show, :index ] do
-  end
+	end
 
 end
