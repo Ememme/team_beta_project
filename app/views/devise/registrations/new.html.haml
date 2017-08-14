@@ -1,13 +1,22 @@
-%h2.center Sign up
+%h2.center=t('profile.new')
 .row
-  .col.s5
-  .col.s2.center  
+  .col.s3
+  .col.s6.center
     = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
       = f.error_notification
-      .form-inputs
-        = f.input :email, required: true, autofocus: true
-        = f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length)
-        = f.input :password_confirmation, required: true
+      .row
+        .col.s5.left
+          .form-inputs
+            = f.input :email, required: true, autofocus: true
+            = f.input :password, required: true, input_html: { "id": "validate-info-1",class: "tooltipped", "data-position": "bottom", "data-delay": "50", "data-tooltip": "#{@minimum_password_length} characters minimum"}
+            = f.input :password_confirmation, required: true
+        .col.s2
+        .col.s5.right
+          .form-inputs
+            = f.input :first_name, required: true
+            = f.input :last_name, required: true
+            = f.input :nickname, required: true
       .form-actions
-        %input.btn{ name: "commit", type: "submit", value: "Sign up"}
+        %input.btn{ name: "commit", type: "submit", value: t('profile.new')}
     = render "devise/shared/links"
+  .col.s3

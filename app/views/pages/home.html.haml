@@ -2,11 +2,12 @@
   .container
     %br/
     %br/
-    %h1.header.center.text-1=t('hello')
+    %h1.header.center.text-1 
+      =t('hello')
     .row.center
-      %h5.header.col.s12.light A modern tool for managing your dormitory issues!
+      %h5.header.col.s12.light=t('layout.description')
     .row.center
-      %a#download-button.btn-large.waves-effect.waves-light.text-1{:href => "http://materializecss.com/getting-started.html"} Get Started
+      %a#download-button.btn-large.waves-effect.waves-light.text-1{:href => "http://materializecss.com/getting-started.html"}=t('layout.get_started')
       %br/
       %br/
 .container

@@ -1,5 +1,7 @@
-%h2.center Forgot your password?
-%p.center Don't worry! We are going to send you password reset instructions.
+%h2.center 
+  = t('devise.passwords.forgot_password')
+%p.center 
+  = t('devise.passwords.forgot_password_sedative')
 .row
   .col.s5
   .col.s2.center  
@@ -9,5 +11,5 @@
         = f.input :email, required: true, autofocus: true
       .form-actions
         .center
-          %input.btn{ name: "commit", type: "submit", value: "Send instructions"}
+          %input.btn{ name: "commit", type: "submit", value: t('devise.passwords.forgot_password_button')}
     = render "devise/shared/links"
