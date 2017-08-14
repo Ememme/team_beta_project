@@ -1,5 +1,12 @@
 en:
-  hello: "Hello world"
+  hello: "Hello"
+
+  rent: "Rent"
+  currency: "€"
+  flatmates: "Flatmates"
+
+  expenses: "Your expenses"
+
 
   profile:
     new: "Create an account"
@@ -8,6 +15,10 @@ en:
     login: "Log in"
     logout: "Log out"
     signup: "Sign up"
+
+    myprofile: "My profile"
+
+    id_number: "ID number"
   layout:
     logo: "Student Inn"
     description: "A modern tool for managing your dormitory issues!"

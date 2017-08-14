@@ -2146,6 +2146,8 @@
  *    without disabling user zoom.
  */
 html {
+  min-height: 100%;
+  position: relative;
   font-family: sans-serif;
   /* 1 */
   -ms-text-size-adjust: 100%;
@@ -2158,7 +2160,7 @@ html {
  * Remove default margin.
  */
 body {
-  margin: 0;
+  margin: 0 0 100px;
 }
 
 /* HTML5 display definitions
@@ -2183,6 +2185,23 @@ nav,
 section,
 summary {
   display: block;
+}
+
+footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+  overflow:hidden;
+  padding: 0.2em 0 0.2em;
+
+  h5 {
+    font-size: 1em;
+  }
+  p {
+    font-size: 0.8em;
+  }
 }
 
 /**
@@ -2878,7 +2897,6 @@ ul.staggered-list li {
 }
 
 .page-footer {
-  padding-top: 20px;
   color: #fff;
   background-color: #ee6e73;
 }
