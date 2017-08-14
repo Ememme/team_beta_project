@@ -1,10 +1,24 @@
-%h5
-  = @student.first_name
-  = @student.last_name
+.container
+  %h5
+    = @student.nickname
+  %ul
+    %li= "#{@student.first_name} #{@student.last_name}"
+    %li= "#{t('profile.id_number')}: #{@student.id_number}"
 
-- if @student == current_student
-  = link_to t('profile.edit'), edit_student_registration_path, method: :get
+    - if @student.tenancy_contract.rent?
+      - if params[:locale] == "en"
+        %li= "#{t('rent')}: #{rent_euro(@student)} #{t('currency')}"
+      - else
+        %li= "#{t('rent')}: #{rent(@student)} #{t('currency')}"
+    %li= "#{t('flatmates')}:"
+    %ul
+    - @student.tenancy_contract.room.students.each do |student|
+      - if student != @student
+        %li= link_to student.first_name, student_path(student)
 
-- if @student == current_student && @student.bio.present?
-  = @student.bio
+  - if @student == current_student
+    = link_to t('profile.edit'), edit_student_registration_path, method: :get
+
+  - if @student == current_student && @student.bio.present?
+    = @student.bio
 

@@ -6,7 +6,7 @@
     %title Dormitory Manager - bla bla bla!
     / CSS
     = csrf_meta_tags
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     %link{:href => "https://fonts.googleapis.com/icon?family=Material+Icons", :rel => "stylesheet"}/
   %body.bg-2
@@ -39,13 +39,13 @@
                   .center
                     = image_tag "https://i.pinimg.com/736x/c0/44/47/c044473a5ec28012fc9cd3671f1e9c11--funny-facebook-facebook-com.jpg", height: "100px", width: "100px", title: current_student.first_name
                 %li
-                  = link_to "My room", "#"
+                  = link_to t('profile.myprofile'), current_student
                 %li
-                  = link_to "Expenses", "#"
+                  = link_to t('expenses'), ""
                 %li
                   = link_to "Sth", "#"
               %li
-                %a.dropdown-button#dbutton1{"data-activates" => "dropdown1", :href => "#!"}
+                %a.dropdown-button#dbutton1{"data-activates" => "dropdown1", :href => "#"}
                   = current_student.first_name
                   %i.material-icons.right person
 
