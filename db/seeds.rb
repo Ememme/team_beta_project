@@ -25,9 +25,9 @@ require 'ffaker'
   end
 
   all_students = Student.all
-  capacity = [1,2,3,4].sample
   number = 0
   while all_students.count > 0
+    capacity = [1,2,3,4].sample
     room = Room.create!(
       name: "Room's name",
       number: number += 1,
