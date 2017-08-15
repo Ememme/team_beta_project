@@ -25,7 +25,8 @@ class RoomDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :id,
-    :tenancy_contracts,
+    :number,
+    :name,
     :students,
     :capacity,
   ].freeze

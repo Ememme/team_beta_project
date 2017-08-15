@@ -49,6 +49,6 @@ class TenancyContractDashboard < Administrate::BaseDashboard
   ].freeze
 
   def display_resource(tenancy_contract)
-    "#{I18n.t('activerecord.models.tenancy_contract.one')} (ID: #{tenancy_contract.id}, STUDENT: #{tenancy_contract.student.id})"
+    "#{I18n.t('activerecord.models.tenancy_contract.one')} ##{tenancy_contract.id} (ROOM: #{tenancy_contract.room.id}, STUDENT: #{tenancy_contract.student.id})"
   end
 end

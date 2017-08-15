@@ -8,10 +8,11 @@ class StudentDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    tenancy_contract: TenancyContractRentField,
+    tenancy_contract: Field::HasOne,
     room: Field::HasOne,
     id: Field::Number,
     first_name: Field::String,
+    password: Field::String,
     last_name: Field::String,
     id_number: Field::String,
     created_at: Field::DateTime,
@@ -50,12 +51,15 @@ class StudentDashboard < Administrate::BaseDashboard
     :tenancy_contract,
     :room,
     :id,
+    :email,
     :first_name,
     :last_name,
+    :nickname,
     :id_number,
+    :locale,
+    :bio,
     :created_at,
     :updated_at,
-    :email,
     :encrypted_password,
     :reset_password_token,
     :reset_password_sent_at,
@@ -65,36 +69,33 @@ class StudentDashboard < Administrate::BaseDashboard
     :last_sign_in_at,
     :current_sign_in_ip,
     :last_sign_in_ip,
-    :locale,
-    :bio,
-    :nickname,
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :tenancy_contract,
-    :room,
+    :email,
+    :password,
     :first_name,
     :last_name,
+    :nickname,
     :id_number,
-    :email,
-    :encrypted_password,
-    :reset_password_token,
-    :reset_password_sent_at,
-    :remember_created_at,
-    :sign_in_count,
-    :current_sign_in_at,
-    :last_sign_in_at,
-    :current_sign_in_ip,
-    :last_sign_in_ip,
     :locale,
     :bio,
-    :nickname,
+    :tenancy_contract,
+    :room,
   ].freeze
 
   def display_resource(student)
+    if student.is_a? ActiveRecord::Associations::CollectionProxy
+    student.to_a.map { |s| full_name(s) }.to_sentence
+    else
+      full_name(student)
+    end
+  end
+
+  def full_name(student)
     if student.first_name && student.last_name
       "#{student.first_name} #{student.last_name} (ID: #{student.id})"
     else

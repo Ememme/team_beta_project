@@ -1,7 +1,7 @@
 module Accessible
   extend ActiveSupport::Concern
   included do
-    before_action :check_user, except: :destroy
+    before_action :check_user, except: [:destroy, :edit]
   end
 
   protected
