@@ -1,4 +1,27 @@
 pl:
+  activerecord:
+    models:
+      admin_user:
+        one: "Admin"
+        few: "Admini"
+        many: "Admini"
+        other: "Admini"
+      student:
+        one: "Student"
+        few: "Studenci"
+        many: "Studenci"
+        other: "Studenci"
+      room:
+        one: "Pokój"
+        few: "Pokoje"
+        many: "Pokoje"
+        other: "Pokoje"
+      tenancy_contract:
+        one: "Kontrakt"
+        few: "Kontrakty"
+        many: "Kontrakty"
+        other: "Kontrakty"
+
   hello: "Witaj Świecie"
 
   profile:
@@ -8,6 +31,7 @@ pl:
     login: "Zaloguj się"
     logout: "Wyloguj się"
     signup: "Zarejestruj się"
+    remember_me: "Zapamiętaj mnie"
   layout:
     logo: "Menedżer Akademika Pro"
     description: "Nowoczesne narzędzie do zarządzania sprawami akademika."

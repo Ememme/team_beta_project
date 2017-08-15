@@ -1,0 +1,34 @@
+pl:
+  administrate:
+    dashboard: "Dashboard"
+    actions:
+      confirm: Czy jesteś pewien?
+      destroy: Usuń
+      edit: Edytuj
+      show: Wyświetl
+      new: Nowy
+      back: Wstecz
+    buttons:
+      new_resource: "Nowy %{resource_name}"
+    controller:
+      create:
+        success: "Zasób %{resource} został pomyślnie utworzony."
+      destroy:
+        success: "Zasób %{resource} został pomyślnie usunięty."
+      update:
+        success: "Zasób %{resource} został pomyślnie zaktualizowany."
+    fields:
+      has_many:
+        more: Wyświetlanie %{count} z %{total_count}
+        none: Brak
+      polymorphic:
+        not_supported: Relacje polimorficzne nie są obsługiwane.
+      has_one:
+        not_supported: Relacje jeden-do-jednego nie są obsługiwane.
+    search:
+      clear: Wyczyść wyszukiwanie
+      label: Szukanie %{resource}
+    resources: "Zasoby:"
+    admin_panel: "Panel administracyjny"
+    logged_as: "Zalogowany jako:"
+    log_out: "Wyloguj"
