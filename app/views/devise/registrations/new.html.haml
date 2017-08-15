@@ -13,9 +13,9 @@
         .col.s2
         .col.s5.right
           .form-inputs
-            = f.input :first_name, required: true
-            = f.input :last_name, required: true
-            = f.input :nickname, required: true
+            = f.input :first_name, required: false
+            = f.input :last_name, required: false
+            = f.input :nickname, required: false
       .form-actions
         %input.btn{ name: "commit", type: "submit", value: t('profile.new')}
     = render "devise/shared/links"

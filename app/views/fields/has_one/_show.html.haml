@@ -1,0 +1,30 @@
+-# <%#
+-# # HasOne Show Partial
+-#
+-# This partial renders a has_one relationship,
+-# to be displayed on a resource's show page.
+-#
+-# All fields of has_one relationship would be rendered
+-#
+-# ## Local variables:
+-#
+-# - `field`:
+-#   An instance of [Administrate::Field::HasOne][1].
+-#   A wrapper around the has_one relationship pulled from the database.
+-#
+-# [1]: http://www.rubydoc.info/gems/administrate/Administrate/Field/HasOne
+-# %>
+
+- if field.data
+  %fieldset.attribute--nested
+    %legend
+      = link_to(field.display_associated_resource, [namespace, field.data])
+    - field.nested_form.attributes.each do |attribute|
+      %div
+        %dt.attribute-label
+          = t("helpers.label.#{resource_name}.#{attribute.name}", default: attribute.name.titleize)
+        %dd{:class => "attribute-data attribute-data--#{attribute.html_class}"}
+          - if attribute.respond_to? 'display_associated_resource'
+            = attribute.display_associated_resource
+          - else
+            = attribute.data
