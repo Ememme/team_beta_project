@@ -1,7 +1,7 @@
 %nav.navigation{:role => "navigation"}
   =link_to 'Dashboard', admin_root_path, class: "navigation__link navigation__link--#{controller_name == 'dashboard' ? 'active' : 'inactive'}"
   %hr/
-  %h3 Resources:
+  %h3=t('administrate.resources')
   %br
   - Administrate::Namespace.new(namespace).resources.each do |resource|
     - next if resource.resource == 'dashboard' || !!(/^[a-z_]*\/+[a-z_]*$/ =~ resource.resource)
