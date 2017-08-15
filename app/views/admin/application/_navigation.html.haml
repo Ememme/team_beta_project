@@ -1,0 +1,15 @@
+%nav.navigation{:role => "navigation"}
+  =link_to 'Dashboard', admin_root_path, class: "navigation__link navigation__link--#{controller_name == 'dashboard' ? 'active' : 'inactive'}"
+  %hr/
+  %h3 Resources:
+  %br
+  - Administrate::Namespace.new(namespace).resources.each do |resource|
+    - next if resource.resource == 'dashboard' || !!(/^[a-z_]*\/+[a-z_]*$/ =~ resource.resource)
+    = link_to(display_resource_name(resource), [namespace, resource.path], class: "navigation__link navigation__link--#{nav_link_state(resource)}" )
+
+  %hr/
+  .text-center
+    -if params[:locale] == 'pl'
+      =link_to image_tag('https://cdn2.iconfinder.com/data/icons/fatcow/32x32/flag_great_britain.png'), url_for(locale: :en)
+    -else
+      =link_to image_tag('https://cdn2.iconfinder.com/data/icons/fatcow/32x32/flag_poland.png'), url_for(locale: :pl)

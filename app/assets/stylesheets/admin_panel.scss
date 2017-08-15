@@ -1,0 +1,65 @@
+// Variables
+$top-navbar-height: 50px;
+
+
+body {
+  margin-top: $top-navbar-height;}
+
+// Text formating
+
+.text-center {
+  text-align: center;
+}
+
+// Navbar
+ul.topnav {
+    list-style-type: none;
+    border: 1px solid #e7e7e7;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #f3f3f3;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: $top-navbar-height;
+    z-index: 1000;
+}
+
+ul.topnav li {
+    float: left;
+    height: $top-navbar-height;
+  }
+
+ul.topnav li {
+    display: block;
+    color: #293f54;
+    text-align: center;
+    padding: 14px 16px;
+    height: $top-navbar-height;
+}
+
+ul.topnav li a {
+    color: #777;
+    text-decoration: none;
+}
+
+ul.topnav li a:hover:not(.active) {
+  color: #293f54;
+  }
+
+ul.topnav li a.active {
+  background-color: #e7e7e7;
+  color: #293f54;
+  }
+
+.float-right {float: right;}
+
+@media screen and (max-width: 600px){
+    ul.topnav li.right,
+    ul.topnav li {float: none;}
+}
+
+ul.topnav li a.brand {
+
+  }

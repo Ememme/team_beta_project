@@ -4,9 +4,6 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_student!
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  # Setting language
-
-
   private
 
   def set_locale

@@ -1,12 +1,13 @@
 class Students::SessionsController < Devise::SessionsController
+  include Accessible
   # before_action :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in
   def new
-    # super
     if params[:redirect_to].present?
       store_location_for(resource, params[:redirect_to])
     end
+    super
   end
 
   # POST /resource/sign_in

@@ -1,0 +1,7 @@
+- content_for(:title, 'Dashboard')
+
+Summary:
+%ul
+  %li Admins: #{AdminUser.count}
+  %li Students: #{Student.count}
+  %li Rooms: #{Room.count}
