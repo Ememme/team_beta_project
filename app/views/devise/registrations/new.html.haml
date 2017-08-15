@@ -1,7 +1,6 @@
 %h2.center=t('profile.new')
 .row
-  .col.s3
-  .col.s6.center
+  .col.s6.offset-s3
     = simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
       = f.error_notification
       .row
@@ -19,4 +18,3 @@
       .form-actions
         %input.btn{ name: "commit", type: "submit", value: t('profile.new')}
     = render "devise/shared/links"
-  .col.s3

@@ -45,6 +45,13 @@ pl:
         updated_at: "Zaktualizowano"
 
   hello: "Witaj Świecie"
+  hello: "Witaj"
+
+  rent: "Czynsz"
+  currency: "zł"
+  flatmates: "Współlokatorzy"
+
+  expenses: "Twoje wydatki"
 
   profile:
     new: "Utwórz konto"
@@ -53,6 +60,12 @@ pl:
     login: "Zaloguj się"
     logout: "Wyloguj się"
     signup: "Zarejestruj się"
+
+    myprofile: "Twój profil"
+
+    id_number: "Numer legitymacji"
+
+
     remember_me: "Zapamiętaj mnie"
   layout:
     logo: "Menedżer Akademika Pro"
