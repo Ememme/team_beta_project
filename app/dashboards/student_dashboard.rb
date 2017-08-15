@@ -94,10 +94,11 @@ class StudentDashboard < Administrate::BaseDashboard
     :nickname,
   ].freeze
 
-  # Overwrite this method to customize how students are displayed
-  # across all pages of the admin dashboard.
-  #
-  # def display_resource(student)
-  #   "Student ##{student.id}"
-  # end
+  def display_resource(student)
+    if student.first_name && student.last_name
+      "#{student.first_name} #{student.last_name} (ID: #{student.id})"
+    else
+      "#{student.email}"
+    end
+  end
 end

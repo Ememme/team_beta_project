@@ -48,10 +48,7 @@ class TenancyContractDashboard < Administrate::BaseDashboard
     :rent,
   ].freeze
 
-  # Overwrite this method to customize how tenancy contracts are displayed
-  # across all pages of the admin dashboard.
-  #
-  # def display_resource(tenancy_contract)
-  #   "TenancyContract ##{tenancy_contract.id}"
-  # end
+  def display_resource(tenancy_contract)
+    "#{I18n.t('activerecord.models.tenancy_contract.one')} (ID: #{tenancy_contract.id}, STUDENT: #{tenancy_contract.student.id})"
+  end
 end

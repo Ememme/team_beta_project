@@ -33,31 +33,26 @@ class RoomDashboard < Administrate::BaseDashboard
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-    :tenancy_contracts,
-    :students,
     :id,
+    :number,
+    :students,
     :capacity,
+    :name,
     :created_at,
     :updated_at,
-    :number,
-    :name,
   ].freeze
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :tenancy_contracts,
-    :students,
-    :capacity,
     :number,
+    :capacity,
     :name,
+    :students,
   ].freeze
 
-  # Overwrite this method to customize how rooms are displayed
-  # across all pages of the admin dashboard.
-  #
-  # def display_resource(room)
-  #   "Room ##{room.id}"
-  # end
+  def display_resource(room)
+    "#{I18n.t('activerecord.models.room.one')} ##{room.number} (ID: #{room.id})"
+  end
 end
