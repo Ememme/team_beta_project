@@ -6,6 +6,7 @@ class Student < ApplicationRecord
 
   has_one :tenancy_contract
   has_one :room, through: :tenancy_contract
+  has_many :announcements
 
   validates :nickname, presence: true,
                        uniqueness: { case_sensitive: false },

@@ -19,9 +19,12 @@ pl:
 
     id_number: "Numer legitymacji"
 
+  addcomment: "Dodaj"
+
+
 
   layout:
-    logo: "Menedżer Akademika Pro"
+    logo: "Student Inn"
     description: "Nowoczesne narzędzie do zarządzania sprawami akademika."
     get_started: "Ziomek sprawdź to"
     company_bio: "O firmie"
