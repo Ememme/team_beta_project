@@ -13,19 +13,21 @@ require 'ffaker'
       email:    "student@example.com",
       first_name: "Pan",
       last_name:  "Student",
-      id_number:  "1293123"
+      id_number:  "1293123",
+      avatar:     FFaker::Avatar.image
   )
 
   puts "\nCreating students:"
-  50.times do |s| 
+  50.times do |s|
     Student.create!(
       first_name: FFaker::Name.first_name,
       last_name:  FFaker::Name.last_name,
-      nickname:   FFaker::Name.name,
+      nickname:   "student#{s+1}",
       email:      FFaker::Internet.email,
-      id_number:  FFaker::Guid.guid,
+      id_number:  "ID000#{s+1}",
       password:   FFaker::Internet.password,
-      bio:        FFaker::Lorem.paragraph
+      bio:        FFaker::Lorem.paragraph,
+      avatar:     FFaker::Avatar.image
     )
     print '.'
   end
@@ -46,7 +48,7 @@ require 'ffaker'
     all_students -= roommates
   end
 
-  puts "\nCreating expenses:" 
+  puts "\nCreating expenses:"
     20.times do
       students = Student.all
       count = (rand(5) + 1).to_f
@@ -68,9 +70,8 @@ require 'ffaker'
         ContributorExpense.create!(
           student_id: s.id,
           expense_id: expense.id
-        ) 
+        )
       end
 
       print '.'
     end
-    
