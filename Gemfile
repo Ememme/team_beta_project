@@ -40,6 +40,7 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'rails-i18n', '~> 5.0.0'
 gem 'carrierwave', '~> 1.0'
+gem 'mini_magick'
 
 
 # Use Capistrano for deployment
