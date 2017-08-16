@@ -27,7 +27,7 @@ require 'ffaker'
       nickname:   nickname,
       email:      email,
       id_number:  id_number,
-      password:   FFaker::Internet.password,
+      password:   "password",
       bio:        FFaker::Lorem.paragraph
     )
   end
