@@ -38,9 +38,6 @@ en:
       short: "%b %d"
       long: "%B %d, %Y"
 
-
-
-  hello: "Hello world"
   hello: "Hello"
 
   rent: "Rent"
@@ -64,10 +61,9 @@ en:
 
 
   addcomment: "Submit"
-
-
-
-    remember_me: "Remember me"
+  
+  remember_me: "Remember me"
+  
   layout:
     logo: "Student Inn"
     description: "A modern tool for managing your dormitory issues!"
