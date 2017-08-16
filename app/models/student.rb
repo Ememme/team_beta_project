@@ -25,6 +25,7 @@ class Student < ApplicationRecord
                         format: { with: /\A[A-Z0-9]+\z/ }
   validates_integrity_of  :avatar
   validates_processing_of :avatar
+  validates :avatar_size_validation
 
   private
    def avatar_size_validation
