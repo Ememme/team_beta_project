@@ -9,11 +9,12 @@
       %p
         Currently waiting confirmation for: #{resource.unconfirmed_email}
     - if current_student.avatar.present?
-          = image_tag(current_student.avatar.thumb.url)
-        = f.file_field :avatar
-        = f.hidden_field :avatar_cache
-        = f.label :remove_avatar do
-          = f.check_box :remove_avatar 
+      = image_tag(current_student.avatar.thumb.url)
+      = f.label :remove_avatar do
+        = f.check_box :remove_avatar 
+    = f.file_field :avatar
+    = f.hidden_field :avatar_cache
+   
     = f.input :bio
     = f.input :locale, priority: [ I18n.default_locale ], collection: [ "pl", "en"]
     = f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false
