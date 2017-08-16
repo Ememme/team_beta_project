@@ -1,6 +1,7 @@
 
 # ..:: Netguru Code College - Student-inn project ::..
 
+[![codebeat badge](https://codebeat.co/badges/ad34ca4f-c3d3-48ff-a794-ff9905388b8d)](https://codebeat.co/projects/github-com-netgurucodecollege-team_beta_project-master)
 
 # Technology stack :gem:
 
