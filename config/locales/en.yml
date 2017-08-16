@@ -1,5 +1,8 @@
 en:
   activerecord:
+    errors:
+      room_full: "max reached (%{capacity}). Can't add more students."
+      have_room:  ", student have room (ID: %{room_id})"
     models:
       admin_user:
         one: "Admin"
@@ -64,9 +67,9 @@ en:
 
 
   addcomment: "Submit"
-  
+
   remember_me: "Remember me"
-  
+
   layout:
     logo: "Student Inn"
     description: "A modern tool for managing your dormitory issues!"

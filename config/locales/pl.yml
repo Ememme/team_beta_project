@@ -1,5 +1,8 @@
 pl:
   activerecord:
+    errors:
+      room_full: "pokoju zapełniona (%{capacity}). Nie można dodać więcej studentów."
+      have_room:  ", student jest juz przypisany do pokoju (ID: %{room_id})"
     models:
       admin_user:
         one: "Admin"
@@ -69,9 +72,9 @@ pl:
     id_number: "Numer legitymacji"
 
   addcomment: "Dodaj"
-  
+
   remember_me: "Zapamiętaj mnie"
-  
+
   layout:
     logo: "Student Inn"
     description: "Nowoczesne narzędzie do zarządzania sprawami akademika."

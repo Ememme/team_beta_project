@@ -16,9 +16,7 @@ class Student < ApplicationRecord
                         uniqueness: true
   has_many :announcements
 
-
   validates :nickname, allow_blank: true,
-
                        uniqueness: { case_sensitive: false },
                        length: { minimum: 5, maximum: 20 },
                        format: { with: /\A[a-zA-Z0-9]+\z/ }
@@ -26,15 +24,25 @@ class Student < ApplicationRecord
   validates :first_name, :last_name, allow_blank: true,
                                      format: { with: /\A[a-zA-Z]+\z/ },
                                      length: { maximum: 30 }
-  validates :id_number, allow_blank: true,
+  validates :id_number, presence: true,
                         uniqueness: true,
                         format: { with: /\A[A-Z0-9]+\z/ }
   validates_integrity_of  :avatar
   validates_processing_of :avatar
   validate :avatar_size_validation
 
+  # validate :student_have_one_room
   private
+
    def avatar_size_validation
      errors[:avatar] << "should be less than 500KB" if avatar.size > 0.5.megabytes
+   end
+
+   def student_have_one_room
+     if self.room.blank?
+       return true
+     else
+       errors.add(:base, message: I18n.t('activerecord.errors.have_room', room_id: self.room.id))
+     end
    end
 end
