@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170816145220) do
+ActiveRecord::Schema.define(version: 20170816105610) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,33 @@ ActiveRecord::Schema.define(version: 20170816145220) do
     t.float "price"
     t.float "divided_price"
     t.string "title"
+
+  create_table "admin_users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet "current_sign_in_ip"
+    t.inet "last_sign_in_ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_admin_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  end
+
+  create_table "announcements", force: :cascade do |t|
+    t.text "news_body"
+    t.bigint "student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "room_id"
+    t.index ["room_id"], name: "index_announcements_on_room_id"
+    t.index ["student_id"], name: "index_announcements_on_student_id"
+
   end
 
   create_table "rooms", force: :cascade do |t|
@@ -61,12 +88,13 @@ ActiveRecord::Schema.define(version: 20170816145220) do
     t.string "locale"
     t.text "bio"
     t.string "nickname"
+    t.string "avatar"
     t.index ["email"], name: "index_students_on_email", unique: true
     t.index ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true
   end
 
   create_table "tenancy_contracts", force: :cascade do |t|
-    t.float "rent"
+    t.float "rent", default: 0.0
     t.bigint "student_id"
     t.bigint "room_id"
     t.datetime "created_at", null: false
@@ -75,6 +103,8 @@ ActiveRecord::Schema.define(version: 20170816145220) do
     t.index ["student_id"], name: "index_tenancy_contracts_on_student_id"
   end
 
+  add_foreign_key "announcements", "rooms"
+  add_foreign_key "announcements", "students"
   add_foreign_key "tenancy_contracts", "rooms"
   add_foreign_key "tenancy_contracts", "students"
 end

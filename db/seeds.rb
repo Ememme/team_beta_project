@@ -1,10 +1,18 @@
 require 'ffaker'
+
+  # Create Admin User
+  AdminUser.create!(
+    email:    "admin@example.com",
+    password: "password",
+  )
+
+  # Student
   Student.create!(
-      nickname: "admin",
+      nickname: "student",
       password: "password",
-      email:    "admin@example.com",
-      first_name: "Admin",
-      last_name:  "Useruser",
+      email:    "student@example.com",
+      first_name: "Pan",
+      last_name:  "Student",
       id_number:  "1293123"
   )
 

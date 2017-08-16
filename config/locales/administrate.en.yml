@@ -1,0 +1,34 @@
+en:
+  administrate:
+    dashboard: "Dashboard"
+    actions:
+      confirm: Are you sure?
+      destroy: Destroy
+      edit: Edit
+      show: Show
+      new: New
+      back: Back
+    buttons:
+      new_resource: "New %{resource_name}"
+    controller:
+      create:
+        success: "%{resource} was successfully created."
+      destroy:
+        success: "%{resource} was successfully destroyed."
+      update:
+        success: "%{resource} was successfully updated."
+    fields:
+      has_many:
+        more: Showing %{count} of %{total_count}
+        none: None
+      polymorphic:
+        not_supported: Polymorphic relationship forms are not supported.
+      has_one:
+        not_supported: HasOne relationship forms are not supported.
+    search:
+      clear: Clear search
+      label: Search %{resource}
+    resources: "Resources:"
+    admin_panel: "Admin Panel"
+    logged_as: "Logged as:"
+    log_out: "Log out"

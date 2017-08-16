@@ -6,9 +6,9 @@
       .form-inputs
         = f.input :email, required: false, autofocus: true
         = f.input :password, required: false
-        // Nie umiem zrobić checkboxa
-        // = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
+        -# - if devise_mapping.rememberable?
+        -#   = f.input :remember_me, as: :boolean, label: t('profile.remember_me')
 
-      .form-actions.center
+      .form-actions
         = f.button :submit, t('profile.login')
     = render "devise/shared/links"
