@@ -23,7 +23,6 @@ class Student < ApplicationRecord
   validates :id_number, allow_blank: true,
                         uniqueness: true,
                         format: { with: /\A[A-Z0-9]+\z/ }
-  validates_presence_of   :avatar
   validates_integrity_of  :avatar
   validates_processing_of :avatar
 
