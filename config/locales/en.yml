@@ -61,6 +61,12 @@ en:
     myprofile: "My profile"
 
     id_number: "ID number"
+
+
+  addcomment: "Submit"
+
+
+
     remember_me: "Remember me"
   layout:
     logo: "Student Inn"

@@ -9,5 +9,9 @@ module ApplicationHelper
     "%.2f" % (rent / 100.0)
   end
 
+  def date_display(date)
+    date.strftime("%d.%m.%Y, %H:%M")
+  end
+
 
 end

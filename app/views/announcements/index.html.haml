@@ -1,0 +1,19 @@
+- if student_signed_in?
+  .container
+    .row
+      .col.s12
+        %h5
+          Wiadomości
+        = simple_form_for @announcement, url: announcements_path, method: :post do |f|
+          = f.error_notification
+          .form-inputs
+            = f.input :news_body, as: :text, placeholder: 'Write a comment', label: false
+
+          .form-actions
+            = f.button :submit, t('addcomment')
+    .row
+      %table.striped
+        - @announcements.each do |announcement|
+          %tr
+            %strong= announcement.news_body
+            %p= "#{announcement.student.first_name} #{announcement.student.last_name}, #{date_display(announcement.created_at)}"

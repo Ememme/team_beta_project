@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170811213138) do
+ActiveRecord::Schema.define(version: 20170816105610) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "announcements", force: :cascade do |t|
+    t.text "news_body"
+    t.bigint "student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "room_id"
+    t.index ["room_id"], name: "index_announcements_on_room_id"
+    t.index ["student_id"], name: "index_announcements_on_student_id"
+  end
 
   create_table "rooms", force: :cascade do |t|
     t.integer "capacity"
@@ -56,6 +66,8 @@ ActiveRecord::Schema.define(version: 20170811213138) do
     t.index ["student_id"], name: "index_tenancy_contracts_on_student_id"
   end
 
+  add_foreign_key "announcements", "rooms"
+  add_foreign_key "announcements", "students"
   add_foreign_key "tenancy_contracts", "rooms"
   add_foreign_key "tenancy_contracts", "students"
 end

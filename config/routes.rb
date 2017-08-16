@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   scope "(:locale)", locale: /en|pl/ do
 
     namespace :admin do
@@ -20,7 +21,9 @@ Rails.application.routes.draw do
 		resources :students, only: [:show, :index]
 
 		resources :rooms
+    resources :announcements, only: [ :index, :create ]
 
-	end
+  end
 
 end
+
