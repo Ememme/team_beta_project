@@ -1,0 +1,2 @@
+class ContributorExpense < ApplicationRecord
+end

@@ -39,6 +39,8 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'devise'
 gem 'devise-i18n'
 gem 'rails-i18n', '~> 5.0.0'
+gem 'materialize-sass'
+gem 'material_icons'
 
 
 # Use Capistrano for deployment

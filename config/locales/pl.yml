@@ -7,6 +7,10 @@ pl:
 
   expenses: "Twoje wydatki"
 
+  expense:
+    category:
+        validation_fail: "nie jest prawidłową kategorią"
+
   profile:
     new: "Utwórz konto"
     edit: "Edytuj swój profil"

@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
 
+  get 'expenses/new'
+
+  get 'expenses/create'
+
+  get 'expenses/edit'
+
+  get 'expenses/update'
+
+  get 'expenses/index'
+
+  get 'expenses/show'
+
 	scope "(:locale)", locale: /en|pl/ do
 		root to: 'pages#home'
 		

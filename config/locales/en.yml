@@ -7,6 +7,9 @@ en:
 
   expenses: "Your expenses"
 
+  expense:
+    category:
+        validation_fail: "is not a valid category"
 
   profile:
     new: "Create an account"
