@@ -31,8 +31,8 @@ Name |  Version |
 ## Do following things if it is your initial setup
 
   * `cd ~/Developer/`
-  * `git clone git@github.com:NetguruCodeCollege/netguru_code_college_todo_app.git`
-  * `cd netguru_code_college_todo_app`
+  * `git clone git@github.com:NetguruCodeCollege/team_beta_project.git`
+  * `cd team_beta_project
   * `bundle install`
   * create database with default seeds `rake db:create db:schema:load && rake db:seed`
 
