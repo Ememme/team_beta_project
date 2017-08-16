@@ -3,10 +3,10 @@ class Students::SessionsController < Devise::SessionsController
 
   # GET /resource/sign_in
   def new
-    # super
     if params[:redirect_to].present?
       store_location_for(resource, params[:redirect_to])
     end
+    super
   end
 
   # POST /resource/sign_in

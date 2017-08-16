@@ -1,4 +1,46 @@
 en:
+  activerecord:
+    models:
+      admin_user:
+        one: "Admin"
+        other: "Admins"
+      student:
+        one: "Student"
+        other: "Students"
+      room:
+        one: "Room"
+        other: "Rooms"
+      tenancy_contract:
+        one: "Contract"
+        other: "Contracts"
+    attributes:
+      student:
+        first_name: "First name"
+        last_name: "Last name"
+        id_number: "ID Number"
+        created_at: "Created at"
+        updated_at: "Updated at"
+        locale: "Language"
+        bio:  "About"
+        nickname: "Nickname"
+      room:
+        capacity: "Capacity"
+        number: "Number"
+        name: "Name"
+      tenancy_contract:
+        rent: "Rent"
+        student_id: "Student ID"
+        room_id: "Room ID"
+
+  date:
+    formats:
+      default: "%d %m %Y"
+      short: "%b %d"
+      long: "%B %d, %Y"
+
+
+
+  hello: "Hello world"
   hello: "Hello"
 
   rent: "Rent"
@@ -19,6 +61,7 @@ en:
     myprofile: "My profile"
 
     id_number: "ID number"
+    remember_me: "Remember me"
   layout:
     logo: "Student Inn"
     description: "A modern tool for managing your dormitory issues!"

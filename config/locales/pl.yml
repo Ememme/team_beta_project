@@ -1,4 +1,50 @@
 pl:
+  activerecord:
+    models:
+      admin_user:
+        one: "Admin"
+        few: "Admini"
+        many: "Admini"
+        other: "Admini"
+      student:
+        one: "Student"
+        few: "Studenci"
+        many: "Studenci"
+        other: "Studenci"
+      room:
+        one: "Pokój"
+        few: "Pokoje"
+        many: "Pokoje"
+        other: "Pokoje"
+      tenancy_contract:
+        one: "Kontrakt"
+        few: "Kontrakty"
+        many: "Kontrakty"
+        other: "Kontrakty"
+    attributes:
+      student:
+        first_name: "Imię"
+        last_name: "Nazwisko"
+        id_number: "Nr. legitymacji"
+        created_at: "Utworzono"
+        updated_at: "Zaktualizowano"
+        locale: "Język"
+        bio:  "Opis"
+        nickname: "Pseudonim"
+      room:
+        capacity: "Pojemność"
+        number: "Numer"
+        name: "Nazwa"
+        created_at: "Utworzono"
+        updated_at: "Zaktualizowano"
+      tenancy_contract:
+        rent: "Czynsz"
+        student_id: "Student ID"
+        room_id: "Pokój ID"
+        created_at: "Utworzono"
+        updated_at: "Zaktualizowano"
+
+  hello: "Witaj Świecie"
   hello: "Witaj"
 
   rent: "Czynsz"
@@ -20,6 +66,7 @@ pl:
     id_number: "Numer legitymacji"
 
 
+    remember_me: "Zapamiętaj mnie"
   layout:
     logo: "Menedżer Akademika Pro"
     description: "Nowoczesne narzędzie do zarządzania sprawami akademika."
