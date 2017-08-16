@@ -1,11 +1,15 @@
 class Student < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  mount_uploader :avatar, AvatarUploader
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
   has_one :tenancy_contract
   has_one :room, through: :tenancy_contract
+
+
 
   validates :nickname, presence: true,
                        uniqueness: { case_sensitive: false },
@@ -17,5 +21,12 @@ class Student < ApplicationRecord
   validates :id_number, presence: true,
                         uniqueness: true,
                         format: { with: /\A[A-Z0-9]+\z/ }
+  validates_presence_of   :avatar
+  validates_integrity_of  :avatar
+  validates_processing_of :avatar
 
+  private
+   def avatar_size_validation
+     errors[:avatar] << "should be less than 500KB" if avatar.size > 0.5.megabytes
+   end
 end
