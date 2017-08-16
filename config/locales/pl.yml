@@ -2,7 +2,9 @@ pl:
   activerecord:
     errors:
       room_full: "pokoju zapełniona (%{capacity}). Nie można dodać więcej studentów."
-      have_room:  ", student jest juz przypisany do pokoju (ID: %{room_id})"
+      have_room:  "%{student} jest juz przypisany do pokoju => ID: %{room_id}"
+      too_many_contracts: "ID %{room_id} osiągnął maksymalną liczbę kontraktów."
+      already_has_contract: "%{student} posiada już ważny kontrakt."
     models:
       admin_user:
         one: "Admin"

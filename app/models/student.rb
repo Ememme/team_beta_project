@@ -6,21 +6,19 @@ class Student < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  attr_reader :full_name
+
   has_one :tenancy_contract, dependent: :destroy
   has_one :room, through: :tenancy_contract
   has_and_belongs_to_many :expenses, join_table: :contributor_expenses
-
-  validates :nickname, presence: true
-  validates :email, uniqueness: true, presence: true
-  validates :id_number, presence: true,
-                        uniqueness: true
   has_many :announcements
+
+  validates :email, uniqueness: true, presence: true
 
   validates :nickname, allow_blank: true,
                        uniqueness: { case_sensitive: false },
                        length: { minimum: 5, maximum: 20 },
                        format: { with: /\A[a-zA-Z0-9]+\z/ }
-  validates :email, uniqueness: true, presence: true
   validates :first_name, :last_name, allow_blank: true,
                                      format: { with: /\A[a-zA-Z]+\z/ },
                                      length: { maximum: 30 }
@@ -31,18 +29,14 @@ class Student < ApplicationRecord
   validates_processing_of :avatar
   validate :avatar_size_validation
 
-  # validate :student_have_one_room
+  def full_name
+    [first_name.presence, last_name.presence].compact.join(' ')
+  end
+
   private
 
    def avatar_size_validation
      errors[:avatar] << "should be less than 500KB" if avatar.size > 0.5.megabytes
    end
 
-   def student_have_one_room
-     if self.room.blank?
-       return true
-     else
-       errors.add(:base, message: I18n.t('activerecord.errors.have_room', room_id: self.room.id))
-     end
-   end
 end
