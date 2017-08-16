@@ -39,8 +39,12 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'devise'
 gem 'devise-i18n'
 gem 'rails-i18n', '~> 5.0.0'
+
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
+
+gem "administrate"
+
 
 
 # Use Capistrano for deployment
@@ -54,6 +58,7 @@ group :development, :test do
   gem 'selenium-webdriver'
   gem 'shoulda-matchers', '~> 3.0'
   gem 'rspec-rails'
+  gem 'pry-rails'
 end
 
 group :development do
@@ -64,7 +69,6 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'letter_opener'
-  gem 'pry-rails'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

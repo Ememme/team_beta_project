@@ -1,0 +1,8 @@
+%ul.topnav
+  %li.brand
+    =t('administrate.admin_panel')
+  .float-right
+    %li
+      =t('administrate.logged_as')
+      #{current_admin_user.email} |
+      =link_to 'Log out', destroy_admin_user_session_path, method: :delete
