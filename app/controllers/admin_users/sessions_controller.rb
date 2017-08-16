@@ -1,6 +1,4 @@
 class AdminUsers::SessionsController < Devise::SessionsController
-  include Accessible
-  before_action :check_user, except: [:destroy, :new, :create]
   # before_action :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in

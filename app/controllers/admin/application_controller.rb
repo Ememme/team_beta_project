@@ -15,7 +15,7 @@ module Admin
     # def records_per_page
     #   params[:per_page] || 20
     # end
-    
+
     private
 
     def set_locale

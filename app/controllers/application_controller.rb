@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  layout :layout_by_resource
   before_action :set_locale
   before_action :authenticate_student!
   before_action :configure_permitted_parameters, if: :devise_controller?
@@ -20,7 +21,19 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    current_student
+    if resource == current_admin_user
+      admin_root_path
+    else
+      current_student
+    end
+  end
+
+  def layout_by_resource
+    if devise_controller? && resource_name == :admin_user
+      "admin/log_form"
+    else
+      "application"
+    end
   end
 
 end
