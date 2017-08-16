@@ -1,0 +1,9 @@
+.form-header=t('administrate.admin_panel')
+= simple_form_for(resource, as: resource_name, url: session_path(resource_name), class: "register-form") do |f|
+  = f.input :email, required: false, autofocus: true, placeholder: t('simple_form.labels.defaults.email'), label: false
+  = f.input :password, required: false, placeholder: t('simple_form.labels.defaults.password'), label: false
+  = f.button :button, t('profile.login')
+%p.message
+  = render "admin_users/shared/links"
+%p.message
+  =link_to t('administrate.actions.back'), root_path
