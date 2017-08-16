@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  before_action :ensure_admin_exist
   layout :layout_by_resource
   before_action :set_locale
   before_action :authenticate_student!
@@ -36,6 +37,15 @@ class ApplicationController < ActionController::Base
       "admin/log_form"
     else
       "application"
+    end
+  end
+
+  def ensure_admin_exist
+    flash.clear
+    if session[:admin_present].nil? && !AdminUser.any?
+      redirect_to setup_admin_path
+    else
+      session[:admin_present] = true
     end
   end
 
