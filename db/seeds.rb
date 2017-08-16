@@ -21,7 +21,7 @@ require 'ffaker'
     Student.create!(
       first_name: FFaker::Name.first_name,
       last_name:  FFaker::Name.last_name,
-      nickname:   FFaker::Name.name,
+      nickname:   FFaker::Name.first_name.split("").shuffle.join.downcase << rand(100).to_s,
       email:      FFaker::Internet.email,
       id_number:  FFaker::Guid.guid,
       password:   FFaker::Internet.password,
