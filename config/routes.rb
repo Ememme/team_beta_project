@@ -1,26 +1,5 @@
 Rails.application.routes.draw do
 
-# złe routy
-  get 'expenses/new'
-
-  get 'expenses/create'
-
-  get 'expenses/edit'
-
-  get 'expenses/update'
-
-  get 'expenses/index'
-
-  get 'expenses/show'
-
-	scope "(:locale)", locale: /en|pl/ do
-		root to: 'pages#home'
-		
-		devise_for :students
-		resources :students, only: [:show, :index ]
-		
-		resources :rooms
-
   scope "(:locale)", locale: /en|pl/ do
 
     namespace :admin do
@@ -42,6 +21,7 @@ Rails.application.routes.draw do
 
 		resources :rooms
     resources :announcements, only: [ :index, :create ]
+	  resources :expenses
 
   end
 
