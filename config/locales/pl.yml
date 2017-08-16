@@ -44,7 +44,6 @@ pl:
         created_at: "Utworzono"
         updated_at: "Zaktualizowano"
 
-  hello: "Witaj Świecie"
   hello: "Witaj"
 
   rent: "Czynsz"
@@ -66,10 +65,9 @@ pl:
     id_number: "Numer legitymacji"
 
   addcomment: "Dodaj"
-
-
-
-    remember_me: "Zapamiętaj mnie"
+  
+  remember_me: "Zapamiętaj mnie"
+  
   layout:
     logo: "Student Inn"
     description: "Nowoczesne narzędzie do zarządzania sprawami akademika."
