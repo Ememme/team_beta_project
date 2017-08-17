@@ -10,10 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170816105610) do
+ActiveRecord::Schema.define(version: 20170816142858) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "admin_users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.inet "current_sign_in_ip"
+    t.inet "last_sign_in_ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_admin_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  end
 
   create_table "announcements", force: :cascade do |t|
     t.text "news_body"
@@ -23,6 +40,16 @@ ActiveRecord::Schema.define(version: 20170816105610) do
     t.bigint "room_id"
     t.index ["room_id"], name: "index_announcements_on_room_id"
     t.index ["student_id"], name: "index_announcements_on_student_id"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.text "comment_body"
+    t.bigint "student_id"
+    t.bigint "announcement_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["announcement_id"], name: "index_comments_on_announcement_id"
+    t.index ["student_id"], name: "index_comments_on_student_id"
   end
 
   create_table "rooms", force: :cascade do |t|
@@ -57,7 +84,7 @@ ActiveRecord::Schema.define(version: 20170816105610) do
   end
 
   create_table "tenancy_contracts", force: :cascade do |t|
-    t.float "rent"
+    t.float "rent", default: 0.0
     t.bigint "student_id"
     t.bigint "room_id"
     t.datetime "created_at", null: false
@@ -68,6 +95,8 @@ ActiveRecord::Schema.define(version: 20170816105610) do
 
   add_foreign_key "announcements", "rooms"
   add_foreign_key "announcements", "students"
+  add_foreign_key "comments", "announcements"
+  add_foreign_key "comments", "students"
   add_foreign_key "tenancy_contracts", "rooms"
   add_foreign_key "tenancy_contracts", "students"
 end

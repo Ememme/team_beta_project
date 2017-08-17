@@ -38,14 +38,14 @@ en:
       short: "%b %d"
       long: "%B %d, %Y"
 
-
-
-  hello: "Hello world"
   hello: "Hello"
 
   rent: "Rent"
   currency: "€"
   flatmates: "Flatmates"
+  newsfeed:
+    news: "Newsroom"
+    add: "Write your news"
 
   expenses: "Your expenses"
 
@@ -63,11 +63,11 @@ en:
     id_number: "ID number"
 
 
-  addcomment: "Submit"
+  submit: "Submit"
 
 
 
-    remember_me: "Remember me"
+  remember_me: "Remember me"
   layout:
     logo: "Student Inn"
     description: "A modern tool for managing your dormitory issues!"
