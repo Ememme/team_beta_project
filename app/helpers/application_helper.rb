@@ -13,5 +13,12 @@ module ApplicationHelper
     date.strftime("%d.%m.%Y, %H:%M")
   end
 
+  def avatar(student)
+    if student.avatar.present?
+      student.avatar
+    else
+      "http://res.cloudinary.com/dijz3a59v/image/upload/v1496246486/profile_avatar_oma8an.png"
+    end
+  end
 
 end
