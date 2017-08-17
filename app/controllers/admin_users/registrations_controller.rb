@@ -1,12 +1,17 @@
 class AdminUsers::RegistrationsController < Devise::RegistrationsController
   skip_before_action :ensure_admin_exist
+  # before_action :redirect_when_admin
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+  def new
+    if AdminUser.any?
+      redirect_to root_path
+    else
+      super
+    end
+  end
 
   # POST /resource
   # def create

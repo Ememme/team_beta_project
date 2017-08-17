@@ -42,6 +42,16 @@ ActiveRecord::Schema.define(version: 20170817102000) do
     t.index ["student_id"], name: "index_announcements_on_student_id"
   end
 
+  create_table "comments", force: :cascade do |t|
+    t.text "comment_body"
+    t.bigint "student_id"
+    t.bigint "announcement_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["announcement_id"], name: "index_comments_on_announcement_id"
+    t.index ["student_id"], name: "index_comments_on_student_id"
+  end
+
   create_table "contributor_expenses", force: :cascade do |t|
     t.integer "expense_id"
     t.integer "student_id"
