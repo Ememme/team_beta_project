@@ -47,16 +47,17 @@ require 'ffaker'
   end
 
   puts "\nCreating expenses:" 
-    20.times do
+    200.times do
       students = Student.all
       count = (rand(5) + 1).to_f
       price = (rand()*100).round(2).to_f
+      category = %w(alcohol cleaners food entertainment other).sample
 
       expense = Expense.create!(
         purchaser_id: students.sample.id,
         title: FFaker::Book.title,
         description: FFaker::Book.description,
-        category: "alcohol",
+        category: category,
         date: rand(5).days.ago,
         price: price,
         divided_price: (price/count).round(2)
@@ -67,7 +68,8 @@ require 'ffaker'
       students.each do |s|
         ContributorExpense.create!(
           student_id: s.id,
-          expense_id: expense.id
+          expense_id: expense.id,
+          payed: false
         ) 
       end
 

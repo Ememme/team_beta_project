@@ -10,6 +10,7 @@ class Student < ApplicationRecord
   has_one :room, through: :tenancy_contract
   has_and_belongs_to_many :expenses, join_table: :contributor_expenses
   has_many :announcements
+  has_many :contributor_expenses
 
 
   validates :nickname, allow_blank: true,

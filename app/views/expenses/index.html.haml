@@ -1,16 +1,61 @@
-- @expenses.each do |expense|
-  %h2 Wydatek
-  %p Opis:
-  = expense.description
-  %p Kategoria:
-  = expense.category
-  %p Całkowita kwota:
-  = expense.price
-  %p Kwota do zapłacenia:
-  = expense.divided_price
-  %p Płacił:
-  = Student.find(expense.purchaser_id).last_name
-  %p Wiszą:
-  - expense.students.each do |s|
-    %p="#{s.last_name} " 
-
+.row
+  .col-md-10.col-md-offset-1
+    %h2.text-center Twoje długi
+    %table.table.table-hover.table-bordered
+      %tr
+        %th Tytuł
+        %th Opis
+        %th Wisisz
+        %th Komu?
+        %th Kategoria
+        %th
+      - @expenses.each do |e|
+        %tr
+          %td=e.title
+          %td=e.description.truncate(50)
+          %td=e.divided_price
+          %td=Student.find(e.purchaser_id).last_name
+          %td
+            - case e.category
+            - when 'alcohol'
+              = icon("beer")
+            - when 'food'
+              = icon("cutlery")
+            - when 'cleaners'
+              = icon("bath")
+            - when 'entertainment'
+              = icon("star")
+            - else
+              = icon("question-circle")
+          %td
+            = link_to "Oddałem hajs", "expenses/#{e.id}/pay", method: :post, class: "a.btn.btn-default", role: "button"
+    %br
+    %h2.text-center Wiszą Ci
+    %table.table.table-hover.table-bordered
+      %tr
+        %th Tytuł
+        %th Opis
+        %th Kto
+        %th Ile
+        %th Kategoria
+      - @purchases.each do |p|
+        %tr
+          %td=p.title
+          %td=p.description.truncate(50)
+          %td
+            - p.students[0..-1].each do |s|
+              ="#{s.first_name} #{s.last_name}, "
+            = "#{ p.students.last.first_name} #{p.students.last.last_name}"
+          %td
+            - case p.category
+              - when 'alcohol'
+                = icon("beer")
+              - when 'food'
+                = icon("cutlery")
+              - when 'cleaners'
+                = icon("bath")
+              - when 'entertainment'
+                = icon("star")
+              - else
+                = icon("question-circle")
+          %td=p.divided_price

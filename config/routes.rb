@@ -22,6 +22,7 @@ Rails.application.routes.draw do
 		resources :rooms
     resources :announcements, only: [ :index, :create ]
 	  resources :expenses
+    post "expenses/:id/pay", to: "expenses#pay"
 
   end
 

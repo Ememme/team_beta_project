@@ -10,66 +10,12 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require rails_bootstrap_forms
  *= require_self
- *= require materialize
- *= require material_icons
  */
-@import 'materialize';
-@import "admin_panel";
 
-$textcolor2: #eff8e2;
-$bgcolor2: #cecfc7;
-$textcolor1: #ada8b6;
-$bgcolor1: #23022e;
-
-.icon-block {
-  padding: 0 15px;
-}
-.icon-block .material-icons {
-	font-size: inherit;
-}
-
-.bg-1
-{
-  background-color: $bgcolor1;
-}
-
-.bg-2
-{
-  background-color: $bgcolor2;
-}
-
-.text-1
-{
-  color: $textcolor1;
-}
-
-.text-2
-{
-  color: $textcolor2;
-}
-
-.text-3
-{
-  color: $bgcolor1;
-}
-
-.btn {
-  @extend .bg-1;
-  height: 36px;
-  padding: 10px;
-}
-
-.btn-large {
-  @extend .bg-1;
-}
-
-#dropdown1
-  {
-    width: 150px;
-    height: 260px;
-  }
-
-#dbutton1 {
-  width: 150px;
-}
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import 'bootstrap/glyphicons';
+@import "font-awesome-sprockets";
+@import "font-awesome";

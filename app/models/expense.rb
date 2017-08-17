@@ -1,5 +1,6 @@
 class Expense < ApplicationRecord
   has_and_belongs_to_many :students, join_table: :contributor_expenses
+  has_many :contributor_expenses
 
   validates :purchaser_id, presence: true
   validates :category, inclusion: { in: %w(alcohol food cleaners entertainment other),
