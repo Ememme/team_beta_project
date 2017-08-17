@@ -83,8 +83,7 @@ class StudentDashboard < Administrate::BaseDashboard
     :id_number,
     :locale,
     :bio,
-    :tenancy_contract,
-    :room,
+    :tenancy_contract
   ].freeze
 
   def display_resource(student)

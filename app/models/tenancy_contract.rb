@@ -2,7 +2,8 @@ class TenancyContract < ApplicationRecord
   belongs_to :student
   belongs_to :room
 
-  validate :ensure_room_not_full, :only_students_without_contract
+  validate :ensure_room_not_full
+  # , :only_students_without_contract
 
   private
 
@@ -12,9 +13,9 @@ class TenancyContract < ApplicationRecord
     end
   end
 
-  def only_students_without_contract
-    if !self.student.tenancy_contract.blank?
-      errors.add(:student, I18n.t('activerecord.errors.already_has_contract', student: self.student.full_name))
-    end
-  end
+  # def only_students_without_contract
+  #   if !self.student.tenancy_contract.persisted?
+  #     errors.add(:student, I18n.t('activerecord.errors.already_has_contract', student: self.student.full_name))
+  #   end
+  # end
 end
