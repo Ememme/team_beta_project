@@ -11,6 +11,7 @@ class Student < ApplicationRecord
   has_and_belongs_to_many :expenses, join_table: :contributor_expenses
   has_many :announcements
   has_many :contributor_expenses
+  has_many :comments
 
 
   validates :nickname, allow_blank: true,
