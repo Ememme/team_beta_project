@@ -42,7 +42,7 @@ class ApplicationController < ActionController::Base
 
   def ensure_admin_exist
     flash.clear
-    if session[:admin_present].nil? && !AdminUser.any?
+    if session[:admin_present].nil? && AdminUser.none?
       redirect_to setup_admin_path
     else
       session[:admin_present] = true
