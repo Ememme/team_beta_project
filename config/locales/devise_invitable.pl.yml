@@ -1,28 +1,28 @@
-en:
+pl:
   devise:
     failure:
-      invited: "You have a pending invitation, accept it to finish creating your account."
+      invited: "Posiadasz oczekujące zaproszenie, zaakceptuj je aby ukończyć proces rejestracji."
     invitations:
-      send_instructions: "An invitation email has been sent to %{email}."
-      invitation_token_invalid: "The invitation token provided is not valid!"
-      updated: "Your password was set successfully. You are now signed in."
-      updated_not_active: "Your password was set successfully."
-      no_invitations_remaining: "No invitations remaining"
-      invitation_removed: "Your invitation was removed."
+      send_instructions: "E-mail z zaproszeniem został wysłany do %{email}."
+      invitation_token_invalid: "Kod zaproszenia jest nieprawidłowy."
+      updated: "Twoje hasło zostało pomyślnie ustawione. Jesteś teraz zalogowany."
+      updated_not_active: "Twoje hasło zostało ustawione."
+      no_invitations_remaining: "Brak oczekujących zaproszeń"
+      invitation_removed: "Twoje zaproszenie zostało usunięte."
       new:
-        header: "Send invitation"
-        submit_button: "Send an invitation"
+        header: "Wyślij zaproszenie"
+        submit_button: "Wyślij zaproszenie"
       edit:
         header: "Ustaw swoje hasło"
-        submit_button: "Ustaw moje hasło"
+        submit_button: "Zapisz moje hasło"
     mailer:
       invitation_instructions:
-        subject: "Student Inn: Utworzono konto w systemie"
-        hello: "witaj %{email}"
-        someone_invited_you: "Administrator utworzył Ci konto na %{url}. Dokończ rejestrację korzystając z poniższego linku."
-        accept: "Link do strony"
-        accept_until: "This invitation will be due in %{due_date}."
-        ignore: "Jeżeli nie chcesz się zarejestrować, lub nie wiesz o co chodzi - zignoruj tę wiadomość."
+        subject: "Instrukcja do zaproszenia"
+        hello: "Cześć %{email}"
+        someone_invited_you: "Ktoś zaprosił Cię do %{url}. Zaproszenie możesz zaakceptować przez podany link."
+        accept: "Przyjmij zaproszenie"
+        accept_until: "Zaprosze będzie ważne do %{due_date}."
+        ignore: "Jeśli nie chcesz przyjąć zaproszenia, zignoruj tę wiadomość.<br />Twoje konto nie zostanie utworzone do momentu ustawienia przez Ciebie hasła."
   time:
     formats:
       devise:
