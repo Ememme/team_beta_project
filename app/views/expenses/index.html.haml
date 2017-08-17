@@ -1,5 +1,32 @@
 .row
   .col-md-10.col-md-offset-1
+    %h2.text-center Opłacone
+    %table.table.table-hover.table-bordered
+      %tr
+        %th Tytuł
+        %th Opis
+        %th Wisisz
+        %th Komu?
+        %th
+      - @payed_expenses.each do |e|
+        %tr
+          %td=e.title
+          %td=e.description.truncate(50)
+          %td=e.divided_price
+          - @student = Student.find(e.purchaser_id)
+          %td="#{@student.first_name} #{@student.last_name}"
+          %td
+            - case e.category
+            - when 'alcohol'
+              = icon("beer")
+            - when 'food'
+              = icon("cutlery")
+            - when 'cleaners'
+              = icon("bath")
+            - when 'entertainment'
+              = icon("star")
+            - else
+              = icon("question-circle")
     %h2.text-center Twoje długi
     %table.table.table-hover.table-bordered
       %tr
@@ -9,12 +36,13 @@
         %th Komu?
         %th Kategoria
         %th
-      - @expenses.each do |e|
+      - @not_payed_expenses.each do |e|
         %tr
           %td=e.title
           %td=e.description.truncate(50)
           %td=e.divided_price
-          %td=Student.find(e.purchaser_id).last_name
+          - @student = Student.find(e.purchaser_id)
+          %td="#{@student.first_name} #{@student.last_name}"
           %td
             - case e.category
             - when 'alcohol'
@@ -43,9 +71,11 @@
           %td=p.title
           %td=p.description.truncate(50)
           %td
-            - p.students[0..-1].each do |s|
-              ="#{s.first_name} #{s.last_name}, "
-            = "#{ p.students.last.first_name} #{p.students.last.last_name}"
+            - @notpayed = p.contributor_expenses.where(payed: false).map {|x| x.student_id}
+            - @notpayed[0..-1].each do |s|
+              ="#{Student.find(s).first_name} #{Student.find(s).last_name}, "
+            = "#{ Student.find(@notpayed.last).first_name} #{Student.find(@notpayed.last).last_name}"
+          %td=p.divided_price
           %td
             - case p.category
               - when 'alcohol'
@@ -58,4 +88,4 @@
                 = icon("star")
               - else
                 = icon("question-circle")
-          %td=p.divided_price
+          

@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20170816145220) do
+ActiveRecord::Schema.define(version: 20170817111809) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +50,7 @@ ActiveRecord::Schema.define(version: 20170816145220) do
     t.datetime "updated_at", null: false
     t.index ["announcement_id"], name: "index_comments_on_announcement_id"
     t.index ["student_id"], name: "index_comments_on_student_id"
+  end
 
   create_table "contributor_expenses", force: :cascade do |t|
     t.integer "expense_id"

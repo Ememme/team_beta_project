@@ -26,7 +26,10 @@ class ExpensesController < ApplicationController
   end
 
   def index
-    @expenses = current_student.expenses
+    @not_payed_expenses = current_student.contributor_expenses.where(payed: false).map do |x| 
+      Expense.find(x.expense_id)
+    end
+    @payed_expenses = current_student.expenses.reject { |x| x.in?(@not_payed_expenses)}
     @purchases = Expense.where(purchaser_id: current_student.id)
   end
 
