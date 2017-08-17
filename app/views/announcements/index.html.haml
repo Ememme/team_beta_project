@@ -1,16 +1,18 @@
 - if student_signed_in?
   .container
     .row
-      .col.s12
+      .col-md-8.col-md-offset-2
         %h5
           =t('newsfeed.news')
         = simple_form_for @announcement, url: announcements_path, method: :post do |f|
           = f.error_notification
-          .form-inputs
-            = f.input :news_body, as: :text, placeholder: 'Write a comment', label: false
+          .row.row-flex
+            .col-sm-9
+              = f.input :news_body, as: :text, placeholder: 'Write a comment', label: false, input_html: {style: 'height: 150px'}
+            .col-sm-3
+              = f.button :submit, t('submit'), class: "btn-main"
 
-          .form-actions
-            = f.button :submit, t('submit')
+
     .row
       %table.striped
         - @announcements.each do |announcement|
