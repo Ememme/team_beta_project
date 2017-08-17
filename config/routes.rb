@@ -30,6 +30,7 @@ Rails.application.routes.draw do
     end
 
 	  resources :expenses
+    post "expenses/:id/pay", to: "expenses#pay"
 
   end
 

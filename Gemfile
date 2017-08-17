@@ -51,6 +51,8 @@ gem 'bootstrap-glyphicons'
 gem 'bootstrap_form'
 gem 'font-awesome-sass'
 
+gem 'cloudinary'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
