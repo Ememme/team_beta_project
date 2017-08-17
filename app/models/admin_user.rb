@@ -6,4 +6,5 @@ class AdminUser < ApplicationRecord
   else
     devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable
   end
+  include DeviseInvitable::Inviter
 end

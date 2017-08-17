@@ -1,0 +1,31 @@
+en:
+  devise:
+    failure:
+      invited: "You have a pending invitation, accept it to finish creating your account."
+    invitations:
+      send_instructions: "An invitation email has been sent to %{email}."
+      invitation_token_invalid: "The invitation token provided is not valid!"
+      updated: "Your password was set successfully. You are now signed in."
+      updated_not_active: "Your password was set successfully."
+      no_invitations_remaining: "No invitations remaining"
+      invitation_removed: "Your invitation was removed."
+      new:
+        header: "Send invitation"
+        submit_button: "Send an invitation"
+      edit:
+        header: "Ustaw swoje hasło"
+        submit_button: "Ustaw moje hasło"
+    mailer:
+      invitation_instructions:
+        subject: "Student Inn: Utworzono konto w systemie"
+        hello: "witaj %{email}"
+        someone_invited_you: "Administrator utworzył Ci konto na %{url}. Dokończ rejestrację korzystając z poniższego linku."
+        accept: "Link do strony"
+        accept_until: "This invitation will be due in %{due_date}."
+        ignore: "Jeżeli nie chcesz się zarejestrować, lub nie wiesz o co chodzi - zignoruj tę wiadomość."
+  time:
+    formats:
+      devise:
+        mailer:
+          invitation_instructions:
+            accept_until_format: "%B %d, %Y %I:%M %p"
