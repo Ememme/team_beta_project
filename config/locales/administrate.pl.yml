@@ -30,5 +30,13 @@ pl:
       label: Szukanie %{resource}
     resources: "Zasoby:"
     admin_panel: "Panel administracyjny"
+    go_to_web: "Go to website"
     logged_as: "Zalogowany jako:"
     log_out: "Wyloguj"
+    log_in: "Logowanie"
+
+    setup:
+      add_admin: "Ustaw konto administratora:"
+      installation_complete: "Instalacja aplikacji 'Student Inn' zakończona!"
+      last_step: "Pozostał Ci już tylko jeden krok - konfiguracja pierwszego administratora."
+      forward: "Jedziemy!"

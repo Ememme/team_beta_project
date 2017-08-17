@@ -1,5 +1,10 @@
 en:
   activerecord:
+    errors:
+      room_full: "max reached (%{capacity}). Can't add more students."
+      have_room:  "%{student} already has room => ID: %{room_id}."
+      too_many_contracts: "ID %{room_id} already reached maximum contacts."
+      already_has_contract: "#{student} already has valid contract."
     models:
       admin_user:
         one: "Admin"
@@ -66,7 +71,7 @@ en:
     id_number: "ID number"
 
 
-
+  addcomment: "Submit"
   submit: "Submit"
   remember_me: "Remember me"
 

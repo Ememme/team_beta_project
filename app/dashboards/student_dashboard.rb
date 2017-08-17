@@ -39,6 +39,7 @@ class StudentDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :id,
+    :email,
     :first_name,
     :last_name,
     :room,
@@ -76,15 +77,13 @@ class StudentDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :email,
-    :password,
     :first_name,
     :last_name,
     :nickname,
     :id_number,
     :locale,
     :bio,
-    :tenancy_contract,
-    :room,
+    :tenancy_contract
   ].freeze
 
   def display_resource(student)
