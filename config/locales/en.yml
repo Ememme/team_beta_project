@@ -43,6 +43,9 @@ en:
   rent: "Rent"
   currency: "€"
   flatmates: "Flatmates"
+  newsfeed:
+    news: "Newsroom"
+    add: "Write your news"
 
   expenses: "Your expenses"
 
@@ -63,10 +66,9 @@ en:
     id_number: "ID number"
 
 
-  addcomment: "Submit"
-  
+  submit: "Submit"
   remember_me: "Remember me"
-  
+
   layout:
     logo: "Student Inn"
     description: "A modern tool for managing your dormitory issues!"

@@ -49,6 +49,9 @@ pl:
   rent: "Czynsz"
   currency: "zł"
   flatmates: "Współlokatorzy"
+  newsfeed:
+    news: "Newsroom"
+    add: "Dodaj swój news"
 
   expenses: "Twoje wydatki"
 
@@ -68,10 +71,9 @@ pl:
 
     id_number: "Numer legitymacji"
 
-  addcomment: "Dodaj"
-  
+  submit: "Dodaj"
   remember_me: "Zapamiętaj mnie"
-  
+
   layout:
     logo: "Student Inn"
     description: "Nowoczesne narzędzie do zarządzania sprawami akademika."

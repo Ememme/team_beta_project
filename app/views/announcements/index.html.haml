@@ -3,17 +3,22 @@
     .row
       .col.s12
         %h5
-          Wiadomości
+          =t('newsfeed.news')
         = simple_form_for @announcement, url: announcements_path, method: :post do |f|
           = f.error_notification
           .form-inputs
             = f.input :news_body, as: :text, placeholder: 'Write a comment', label: false
 
           .form-actions
-            = f.button :submit, t('addcomment')
+            = f.button :submit, t('submit')
     .row
       %table.striped
         - @announcements.each do |announcement|
           %tr
             %strong= announcement.news_body
             %p= "#{announcement.student.first_name} #{announcement.student.last_name}, #{date_display(announcement.created_at)}"
+            %col.s10.offset-s4
+            - announcement.comments.each do |comment|
+              %p= comment.comment_body
+              %p= "#{comment.student.first_name} #{comment.student.last_name}, #{date_display(comment.created_at)}"
+          = link_to "reply", new_announcement_comment_path(announcement)
