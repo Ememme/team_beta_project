@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170816142858) do
+
+ActiveRecord::Schema.define(version: 20170816145220) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +51,24 @@ ActiveRecord::Schema.define(version: 20170816142858) do
     t.datetime "updated_at", null: false
     t.index ["announcement_id"], name: "index_comments_on_announcement_id"
     t.index ["student_id"], name: "index_comments_on_student_id"
+
+  create_table "contributor_expenses", force: :cascade do |t|
+    t.integer "expense_id"
+    t.integer "student_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "expenses", force: :cascade do |t|
+    t.integer "purchaser_id"
+    t.string "category"
+    t.text "description"
+    t.date "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.float "price"
+    t.float "divided_price"
+    t.string "title"
   end
 
   create_table "rooms", force: :cascade do |t|
@@ -79,6 +98,7 @@ ActiveRecord::Schema.define(version: 20170816142858) do
     t.string "locale"
     t.text "bio"
     t.string "nickname"
+    t.string "avatar"
     t.index ["email"], name: "index_students_on_email", unique: true
     t.index ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true
   end

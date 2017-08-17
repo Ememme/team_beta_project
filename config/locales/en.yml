@@ -49,6 +49,9 @@ en:
 
   expenses: "Your expenses"
 
+  expense:
+    category:
+        validation_fail: "is not a valid category"
 
   profile:
     new: "Create an account"
@@ -64,10 +67,8 @@ en:
 
 
   submit: "Submit"
-
-
-
   remember_me: "Remember me"
+
   layout:
     logo: "Student Inn"
     description: "A modern tool for managing your dormitory issues!"

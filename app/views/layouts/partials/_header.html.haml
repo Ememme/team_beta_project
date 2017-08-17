@@ -8,9 +8,8 @@
     = csrf_meta_tags
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-    %link{:href => "https://fonts.googleapis.com/icon?family=Material+Icons", :rel => "stylesheet"}/
-  %body.bg-2
-    %nav.bg-1{:role => "navigation"}
+  %body
+    %nav{:role => "navigation"}
       .nav-wrapper.container
         %a#logo-container.brand-logo{:href => root_path}=t('layout.logo')
 
@@ -45,7 +44,7 @@
                 %li
                   = link_to "Sth", "#"
               %li
-                %a.dropdown-button#dbutton1{"data-activates" => "dropdown1", :href => "#"}
+                %a.dropdown-button#dbutton1{"data-activates" => "dropdown1"}
                   = current_student.first_name
                   %i.material-icons.right person
 

@@ -44,7 +44,6 @@ pl:
         created_at: "Utworzono"
         updated_at: "Zaktualizowano"
 
-  hello: "Witaj Świecie"
   hello: "Witaj"
 
   rent: "Czynsz"
@@ -55,6 +54,10 @@ pl:
     add: "Dodaj swój news"
 
   expenses: "Twoje wydatki"
+
+  expense:
+    category:
+        validation_fail: "nie jest prawidłową kategorią"
 
   profile:
     new: "Utwórz konto"
@@ -69,10 +72,8 @@ pl:
     id_number: "Numer legitymacji"
 
   submit: "Dodaj"
-
-
-
   remember_me: "Zapamiętaj mnie"
+
   layout:
     logo: "Student Inn"
     description: "Nowoczesne narzędzie do zarządzania sprawami akademika."

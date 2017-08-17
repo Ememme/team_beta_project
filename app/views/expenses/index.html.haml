@@ -1,0 +1,16 @@
+- @expenses.each do |expense|
+  %h2 Wydatek
+  %p Opis:
+  = expense.description
+  %p Kategoria:
+  = expense.category
+  %p Całkowita kwota:
+  = expense.price
+  %p Kwota do zapłacenia:
+  = expense.divided_price
+  %p Płacił:
+  = Student.find(expense.purchaser_id).last_name
+  %p Wiszą:
+  - expense.students.each do |s|
+    %p="#{s.last_name} " 
+
