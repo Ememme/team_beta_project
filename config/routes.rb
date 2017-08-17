@@ -20,7 +20,7 @@ Rails.application.routes.draw do
       post '/setup', to: 'admin_users/registrations#create', as: :setup_admin
     end
 
-		devise_for :students, path_names: { sign_up: ''}, controllers: { sessions: "students/sessions", invitations: 'students/invitations'}
+		devise_for :students, controllers: { sessions: "students/sessions", invitations: 'students/invitations', registrations: 'students/registrations'}
 		resources :students, only: [:show, :index]
 
 		resources :rooms
