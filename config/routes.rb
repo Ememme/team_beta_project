@@ -25,8 +25,12 @@ Rails.application.routes.draw do
 		resources :students, only: [:show, :index]
 
 		resources :rooms
-    resources :announcements, only: [ :index, :create ]
-    resources :expenses
+
+    resources :announcements, only: [ :index, :create ] do
+      resources :comments
+    end
+
+	  resources :expenses
 
   end
 

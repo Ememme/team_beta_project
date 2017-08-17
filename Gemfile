@@ -40,14 +40,16 @@ gem 'devise'
 gem 'devise_invitable'
 gem 'devise-i18n'
 gem 'rails-i18n', '~> 5.0.0'
-gem 'materialize-sass'
-gem 'material_icons'
 
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
 
 gem "administrate"
 
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap-glyphicons'
+gem 'bootstrap_form'
+gem 'font-awesome-sass'
 
 
 # Use Capistrano for deployment

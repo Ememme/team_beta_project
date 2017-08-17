@@ -48,6 +48,9 @@ en:
   rent: "Rent"
   currency: "€"
   flatmates: "Flatmates"
+  newsfeed:
+    news: "Newsroom"
+    add: "Write your news"
 
   expenses: "Your expenses"
 
@@ -69,7 +72,7 @@ en:
 
 
   addcomment: "Submit"
-
+  submit: "Submit"
   remember_me: "Remember me"
 
   layout:

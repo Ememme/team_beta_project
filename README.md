@@ -1,24 +1,76 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# ..:: Netguru Code College - Student-inn project ::..
 
-Things you may want to cover:
+[![codebeat badge](https://codebeat.co/badges/ad34ca4f-c3d3-48ff-a794-ff9905388b8d)](https://codebeat.co/projects/github-com-netgurucodecollege-team_beta_project-master)
 
-* Ruby version
+# Technology stack :gem:
 
-* System dependencies
+Name |  Version |
+| :--: | :---: |
+| [Ruby](https://www.ruby-lang.org) | 2.4.1 |
+| [Ruby on Rails](http://www.rubyonrails.org/) | 5.1.3 |
+| PostreSQL | 0.18 |
 
-* Configuration
+# Browser support
 
-* Database creation
+Name |  Version |
+| :---: | :---: |
+| IE | 10, 11 |
+| Chrome | newest |
+| Firefox | newest |
+| Safari | 7 and greater |
+| Opera | 15 and greater |
 
-* Database initialization
+# Prerequisites :coffee:
 
-* How to run the test suite
+## You will need the following things properly installed on your machine..
 
-* Services (job queues, cache servers, search engines, etc.)
+* postgreSQL
 
-* Deployment instructions
+# Installation :books:
 
-* ...
+## Do following things if it is your initial setup
+
+  * `cd ~/Developer/`
+  * `git clone git@github.com:NetguruCodeCollege/team_beta_project.git`
+  * `cd team_beta_project
+  * `bundle install`
+  * create database with default seeds `rake db:create db:schema:load && rake db:seed`
+
+# Running / Development :shoe:
+
+## You want to run a project on Your local machine - let's to it!
+
+  * `cd ~/team_beta_project`
+  * `rails s`
+
+# Running Tests :diamonds:
+
+## Specs are really important..
+
+  * `bundle exec rspec`
+
+# Deploying :bullettrain_side:
+
+## How to make deploy with current changes?
+
+  * lorem ipsum
+
+# Accessto production :bullettrain_side:
+
+## How to get access production server & database
+
+  * lorem ipsum
+
+# Worth to read
+
+  * Here we can place some additional documentation specific to project that is Worth
+    knowing
+
+# Troubleshooting :handbag:
+
+  * Some specific, often occuring things that can go wrong during setup of project.
+
+# Other valuable info
+
+  * lorem ipsum dolor

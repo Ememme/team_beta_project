@@ -117,6 +117,8 @@ ActiveRecord::Schema.define(version: 20170817102000) do
 
   add_foreign_key "announcements", "rooms"
   add_foreign_key "announcements", "students"
+  add_foreign_key "comments", "announcements"
+  add_foreign_key "comments", "students"
   add_foreign_key "tenancy_contracts", "rooms"
   add_foreign_key "tenancy_contracts", "students"
 end

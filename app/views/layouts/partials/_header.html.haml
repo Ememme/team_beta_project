@@ -9,48 +9,34 @@
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    %nav{:role => "navigation"}
-      .nav-wrapper.container
-        %a#logo-container.brand-logo{:href => root_path}=t('layout.logo')
+    .navbar
+      = link_to image_tag("http://res.cloudinary.com/dijz3a59v/image/upload/c_scale,w_150/v1502957412/student-inn-logo_kslmyg.png"), root_path
 
-        %ul.right.hide-on-med-and-down
-          - if !student_signed_in?
+      .navbar-right.hidden-xs.hidden-sm
+        -if student_signed_in?
 
-            %li
-              = link_to t('profile.login'), new_student_session_path, style: "font-weight: bold"
-            %li
-              = link_to t('profile.signup'), new_student_registration_path, style: "font-weight: bold"
-          - else
-            %li
-              = link_to "#{t('hello')}, #{current_student.first_name}!", root_path
-            %li
-              = link_to t('profile.logout'), destroy_student_session_path, :method => :delete
-
-          %li
-            - if params[:locale] == "en"
-              = link_to 'PL', url_for(locale: :pl)
-            - else
-              = link_to 'EN', url_for(locale: :en)
-          %li
-            - if student_signed_in?
-              %ul.dropdown-content#dropdown1
-                %li
-                  .center
-                    = image_tag "https://i.pinimg.com/736x/c0/44/47/c044473a5ec28012fc9cd3671f1e9c11--funny-facebook-facebook-com.jpg", height: "100px", width: "100px", title: current_student.first_name
-                %li
-                  = link_to t('profile.myprofile'), current_student
-                %li
-                  = link_to t('expenses'), ""
-                %li
-                  = link_to "Sth", "#"
-              %li
-                %a.dropdown-button#dbutton1{"data-activates" => "dropdown1"}
-                  = current_student.first_name
-                  %i.material-icons.right person
+          = link_to "#{t('hello')}, #{current_student.first_name}!", root_path, class: "navbar-item navbar-link"
+          = link_to t('profile.logout'), destroy_student_session_path, :method => :delete, class: "navbar-item navbar-link"
 
 
-        %ul#nav-mobile.side-nav
-          %li
-            %a{:href => "#"} Navbar Link
-        %a.button-collapse{"data-activates" => "nav-mobile", :href => "#"}
-          %i.material-icons menu
+
+
+        -else
+          = link_to t('profile.login'), new_student_session_path, class: "navbar-item navbar-link"
+          = link_to t('profile.signup'), new_student_registration_path, class: "navbar-item navbar-link"
+
+
+
+
+        - if params[:locale] == "en"
+          = link_to 'PL', url_for(locale: :pl), class: "navbar-item navbar-link"
+        - else
+          = link_to 'EN', url_for(locale: :en), class: "navbar-item navbar-link"
+
+        - if student_signed_in?
+          .navbar-item
+            .dropdown
+              %img#navbar-menu.avatar.dropdown-toggle{"data-toggle" => "dropdown", :src => avatar(current_student)}
+              %ul.dropdown-menu.dropdown-menu-right.navbar-dropdown-menu
+                %li= link_to t('profile.myprofile'), current_student
+                %li= link_to t('expenses'), ""

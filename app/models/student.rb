@@ -13,19 +13,20 @@ class Student < ApplicationRecord
   has_one :room, through: :tenancy_contract
   has_and_belongs_to_many :expenses, join_table: :contributor_expenses
   has_many :announcements
+  has_many :comments
 
   validates :email, uniqueness: true, presence: true
 
   validates :nickname, allow_blank: true,
                        uniqueness: { case_sensitive: false },
-                       length: { minimum: 5, maximum: 20 },
+                       length: { minimum: 1, maximum: 20 },
                        format: { with: /\A[a-zA-Z0-9]+\z/ }
   validates :first_name, :last_name, allow_blank: true,
-                                     format: { with: /\A[a-zA-Z]+\z/ },
+                                     format: { with: /\A[^0-9`!@#\$%\^&*+_=]+\z/ },
                                      length: { maximum: 30 }
   validates :id_number, presence: true,
                         uniqueness: true,
-                        format: { with: /\A[A-Z0-9]+\z/ }
+                        format: { with: /\A[A-Z0-9-]+\z/ }
   validates_integrity_of  :avatar
   validates_processing_of :avatar
   validate :avatar_size_validation
