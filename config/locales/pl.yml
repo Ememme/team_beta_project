@@ -61,7 +61,10 @@ pl:
 
   profile:
     new: "Utwórz konto"
-    edit: "Edytuj swój profil"
+    edit:
+      edit: "Edytuj swój profil"
+      hint: "Zostaw puste jeśli nie chcesz zmienić hasła"
+      hint2: "Podaj swoje aktualne hasło aby potwierdzić zmiany"
     cancel: "Usuń konto"
     login: "Zaloguj się"
     logout: "Wyloguj się"
