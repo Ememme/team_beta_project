@@ -9,7 +9,7 @@
       %p
         Currently waiting confirmation for: #{resource.unconfirmed_email}
     - if current_student.avatar.present?
-      = image_tag(current_student.avatar.thumb.url)
+      = cl_image_tag(current_student.avatar.thumb.url)
     = f.file_field :avatar
     = f.hidden_field :avatar_cache
 
@@ -24,4 +24,3 @@
 %p
   Unhappy? #{link_to t('profile.cancel'), registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
 = link_to "Back", :back
-
