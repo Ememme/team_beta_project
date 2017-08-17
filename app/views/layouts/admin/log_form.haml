@@ -6,11 +6,15 @@
     %meta{:content => "NOODP", :name => "ROBOTS"}/
     %meta{:content => "initial-scale=1", :name => "viewport"}/
     %title=t('administrate.admin_panel')
-    = stylesheet_link_tag 'admin_log_form', media: 'all', 'data-turbolinks-track': 'reload'
+    -if controller_path == 'admin_users/registrations'
+      = stylesheet_link_tag 'app_setup_layout', media: 'all', 'data-turbolinks-track': 'reload'
+    -else
+      = stylesheet_link_tag 'admin_log_form', media: 'all', 'data-turbolinks-track': 'reload'
     = csrf_meta_tags
   %body
-    .login-page
+    .form-page
       = render "admin/application/flashes"
       .form
+        =image_tag('logo250.png')
         = yield
     = render "admin/application/javascript"
