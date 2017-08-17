@@ -13,19 +13,21 @@ require 'ffaker'
       email:    "student@example.com",
       first_name: "Pan",
       last_name:  "Student",
-      id_number:  "1293123"
+      id_number:  "1293123",
+      avatar:     FFaker::Avatar.image
   )
 
   puts "\nCreating students:"
-  50.times do |s| 
+  50.times do |s|
     Student.create!(
       first_name: FFaker::Name.first_name,
       last_name:  FFaker::Name.last_name,
       nickname:   FFaker::Name.first_name.split("").shuffle.join.downcase << rand(100).to_s,
       email:      FFaker::Internet.email,
-      id_number:  FFaker::Guid.guid,
+      id_number:  "ID000#{s+1}",
       password:   FFaker::Internet.password,
-      bio:        FFaker::Lorem.paragraph
+      bio:        FFaker::Lorem.paragraph,
+      avatar:     FFaker::Avatar.image
     )
     print '.'
   end
@@ -46,17 +48,20 @@ require 'ffaker'
     all_students -= roommates
   end
 
-  puts "\nCreating expenses:" 
-    20.times do
+
+  puts "\nCreating expenses:"
+    100.times do
+      master
       students = Student.all
       count = (rand(5) + 1).to_f
       price = (rand()*100).round(2).to_f
+      category = %w(alcohol cleaners food entertainment other).sample
 
       expense = Expense.create!(
         purchaser_id: students.sample.id,
         title: FFaker::Book.title,
         description: FFaker::Book.description,
-        category: "alcohol",
+        category: category,
         date: rand(5).days.ago,
         price: price,
         divided_price: (price/count).round(2)
@@ -67,10 +72,10 @@ require 'ffaker'
       students.each do |s|
         ContributorExpense.create!(
           student_id: s.id,
-          expense_id: expense.id
+          expense_id: expense.id,
+          payed: false
         ) 
       end
 
       print '.'
     end
-    

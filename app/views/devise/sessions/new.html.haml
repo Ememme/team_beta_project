@@ -1,14 +1,12 @@
-%h2.center
-  = t('profile.login')
-.row
-  .col.s6.offset-s3
-    = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-      .form-inputs
-        = f.input :email, required: false, autofocus: true
-        = f.input :password, required: false
-        -# - if devise_mapping.rememberable?
-        -#   = f.input :remember_me, as: :boolean, label: t('profile.remember_me')
+.container
+  %h2.text-center
+    = t('profile.login')
+  .row.row-flex
+    .col-md-6.col-md-offset-3
+      = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .form-inputs
+          = f.input :email, required: false, autofocus: true
+          = f.input :password, required: false
 
-      .form-actions
-        = f.button :submit, t('profile.login')
-    = render "devise/shared/links"
+        .form-actions
+          = f.button :submit, t('profile.login'), class: "btn-main"

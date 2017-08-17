@@ -30,5 +30,13 @@ en:
       label: Search %{resource}
     resources: "Resources:"
     admin_panel: "Admin Panel"
+    go_to_web: "Go to website"
     logged_as: "Logged as:"
     log_out: "Log out"
+    log_in: "Log in"
+
+    setup:
+      add_admin: "Setup admin account:"
+      installation_complete: "Installing the 'Student Inn 'application is complete!"
+      last_step: "You have only one step left - set the first administrator."
+      forward: "Let's do it!"

@@ -23,4 +23,30 @@
   font-weight: lighter;
   color: rgb(255, 255, 255);
   opacity: 0.6;
+  
+}
+
+body {
+  color: lighten(black, 10%);
+}
+
+.btn-main {
+  background-color: white;
+  color: #0f3065;
+  border: 1px solid #f7b509;
+  padding: 10px 15px;
+  border-radius: 50px;
+  opacity: 0.8;
+}
+.btn-main:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: (#0f3065, 5%);
+  background-color: white;
+  border: 1px solid #f7b509;
+}
+
+.row-flex {
+  display: flex;
+  align-items: center;
 }
