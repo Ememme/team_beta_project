@@ -11,17 +11,11 @@ module Admin
     # end
 
     def create
-      # binding.pry
-
       student = Student.new(student_params)
-      # student.build_tenancy_contract(tenancy_contract_params)
-      # binding.pry
       student.room = Room.find(tenancy_contract_params[:room_id])
       student.skip_password_validation = true
-      binding.pry
       if student.save && student.invite!
         student.tenancy_contract = TenancyContract.create(tenancy_contract_params)
-        binding.pry
         redirect_to(
           [namespace, student],
           notice: translate_with_resource("create.success"),
