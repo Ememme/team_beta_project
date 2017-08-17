@@ -1,7 +1,13 @@
-%h2= t 'devise.invitations.edit.header'
-= simple_form_for resource, as: resource_name, url: invitation_path(resource_name), html: { method: :put } do |f|
-  = devise_error_messages!
-  = f.hidden_field :invitation_token
-  = f.input :password
-  = f.input :password_confirmation
-  = f.button :submit, t("devise.invitations.edit.submit_button")
+.container
+  %h2.text-center
+    =t('devise.invitations.edit.header')
+  .row.row-flex
+    .col-md-6.col-md-offset-3
+      = simple_form_for resource, as: resource_name, url: invitation_path(resource_name), html: { method: :put } do |f|
+        = devise_error_messages!
+        .form-inputs
+          = f.hidden_field :invitation_token
+          = f.input :password
+          = f.input :password_confirmation
+        .form-actions
+          = f.button :submit, t("devise.invitations.edit.submit_button")
