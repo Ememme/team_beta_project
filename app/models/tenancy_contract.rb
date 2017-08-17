@@ -8,7 +8,7 @@ class TenancyContract < ApplicationRecord
   private
 
   def ensure_room_not_full
-    if self.room.tenancy_contracts.size >= self.room.capacity
+    if self.room.tenancy_contracts.size > self.room.capacity
       errors.add(:room, I18n.t('activerecord.errors.too_many_contracts', room_id: self.room.id))
     end
   end

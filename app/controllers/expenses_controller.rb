@@ -14,8 +14,10 @@ class ExpensesController < ApplicationController
 
   def pay
     @expense = Expense.find(params[:id])
-    @contributor_expense = @expense.contributor_expenses.where(purchaser_id: current_student.id)
-    @contributor_expense = true
+    @contributor_expense = @expense.contributor_expenses.where(student_id: current_student.id)
+    @contributor_expense = @contributor_expense.first
+    @contributor_expense.payed = true
+    @contributor_expense.save!
     redirect_to @expense, alert: "The expense has been payed succesfully!"
   end
 
@@ -26,9 +28,7 @@ class ExpensesController < ApplicationController
   end
 
   def index
-    @not_payed_expenses = current_student.contributor_expenses.where(payed: false).map do |x| 
-      Expense.find(x.expense_id)
-    end
+    @not_payed_expenses = current_student.contributor_expenses.where(payed: false).map { |x| Expense.find(x.expense_id) }
     @payed_expenses = current_student.expenses.reject { |x| x.in?(@not_payed_expenses)}
     @purchases = Expense.where(purchaser_id: current_student.id)
   end

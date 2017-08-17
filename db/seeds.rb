@@ -51,7 +51,6 @@ require 'ffaker'
 
   puts "\nCreating expenses:"
     100.times do
-      master
       students = Student.all
       count = (rand(5) + 1).to_f
       price = (rand()*100).round(2).to_f
